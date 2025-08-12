@@ -46,9 +46,6 @@ for title in titles:
         if print_3:
             texts = title.text.split()
 
-            #if len(title) > 0:
-            #    print(title)
-
             for text in texts:
                 if len(text) > 0:
                     y += text
@@ -61,5 +58,3 @@ for title in titles:
                 y = ""
                 print_3 = False  # Stop printing after 2 titles
 
-#for title in titles:
- #   print(title.text)
