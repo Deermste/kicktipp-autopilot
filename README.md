@@ -2,7 +2,7 @@
 
 **Automatically predict Bundesliga matches — powered by data, not gut feeling.**
 
-Kicktipp Automat is a Python bot that fetches score predictions from [predicd.com](https://www.predicd.com) and automatically submits them to your [Kicktipp](https://www.kicktipp.de) fantasy league. Set it up once, run it each matchday, and let the data do the work.
+Kicktipp Autopilot is a Python bot that fetches score predictions from [predicd.com](https://www.predicd.com) and automatically submits them to your [Kicktipp](https://www.kicktipp.de) fantasy league. Set it up once, run it each matchday, and let the data do the work.
 
 ---
 
@@ -21,10 +21,10 @@ Kicktipp Automat is a Python bot that fetches score predictions from [predicd.co
 
 ```
 ┌─────────────┐       ┌──────────────────┐       ┌─────────────┐
-│ predicd.com │──────▶│  Kicktipp Automat │──────▶│  Kicktipp   │
+│ predicd.com │──────▶│ Kicktipp Autopilot│───▶│  Kicktipp   │
 │             │       │                  │       │             │
 │ Predictions │ Fetch │ Decode scores    │ Login │ Submit tips │
-│ + Scores    │ ────▶ │ Map team names   │ ────▶ │ for current │
+│ + Scores    │ ────▶ │ Map team names   │ ───▶ │ for current │
 │             │       │ Validate matchday│       │ matchday    │
 └─────────────┘       └──────────────────┘       └─────────────┘
 ```
@@ -48,8 +48,8 @@ Kicktipp Automat is a Python bot that fetches score predictions from [predicd.co
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/TrustPaddy/Kicktipp_automat.git
-   cd Kicktipp_automat
+   git clone https://github.com/TrustPaddy/Kicktipp-Autopilot.git
+   cd Kicktipp-Autopilot
    ```
 
 2. **Install dependencies**
@@ -123,7 +123,7 @@ The bot will:
 ## Project Structure
 
 ```
-Kicktipp_automat/
+Kicktipp-Autopilot/
 ├── BL-Tipp.py      # Main automation script
 ├── example.env      # Template for environment variables
 ├── .gitignore       # Ignores .env and other local files
