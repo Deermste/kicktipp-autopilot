@@ -1,4 +1,4 @@
-# ⚽ Kicktipp Automat
+# ⚽ Kicktipp Autopilot
 
 **Automatically predict Bundesliga matches — powered by data, not gut feeling.**
 
