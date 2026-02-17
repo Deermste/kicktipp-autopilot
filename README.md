@@ -139,3 +139,4 @@ Kicktipp-Autopilot/
 ## Disclaimer
 
 This project is intended for **personal and educational use only**. Use it responsibly and in accordance with the terms of service of both predicd.com and Kicktipp. The authors are not responsible for any misuse or consequences arising from the use of this software.
+Furthermore, the script depends on the website predicd.com. The layout may change at any time, which would cause the script to stop working. This programme was last tested in February 2026.
