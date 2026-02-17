@@ -20,13 +20,13 @@ Kicktipp Autopilot is a Python bot that fetches score predictions from [predicd.
 ## How It Works
 
 ```
-┌─────────────┐       ┌──────────────────┐       ┌─────────────┐
-│ predicd.com │──────▶│ Kicktipp Autopilot│───▶│  Kicktipp   │
-│             │       │                  │       │             │
-│ Predictions │ Fetch │ Decode scores    │ Login │ Submit tips │
-│ + Scores    │ ────▶ │ Map team names   │ ───▶ │ for current │
-│             │       │ Validate matchday│       │ matchday    │
-└─────────────┘       └──────────────────┘       └─────────────┘
+┌─────────────┐        ┌──────────────────┐       ┌─────────────┐
+│ predicd.com │──────▶│ Kicktipp Autopilot│───▶  │  Kicktipp   │
+│             │        │                  │       │             │
+│ Predictions │ Fetch  │ Decode scores    │ Login │ Submit tips │
+│ + Scores    │ ────▶ │ Map team names   │ ───▶  │ for current │
+│             │        │ Validate matchday│       │ matchday    │
+└─────────────┘        └──────────────────┘       └─────────────┘
 ```
 
 1. **Fetch** — Opens predicd.com in a headless browser and extracts predicted scores for all Bundesliga matches
