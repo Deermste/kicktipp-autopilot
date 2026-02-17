@@ -4,6 +4,10 @@
 
 Kicktipp Autopilot is a Python bot that fetches score predictions from [predicd.com](https://www.predicd.com) and automatically submits them to your [Kicktipp](https://www.kicktipp.de) fantasy league. Set it up once, run it each matchday, and let the data do the work.
 
+
+https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
+
+
 ---
 
 ## Features
