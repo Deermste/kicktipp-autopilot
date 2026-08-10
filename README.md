@@ -12,12 +12,20 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
 
 ## Features
 
-- **Automated predictions** — Scrapes match forecasts from predicd.com and enters them into Kicktipp with zero manual input
-- **Smart team name mapping** — Translates team names between platforms (e.g. *Bayer Leverkusen* → *Bayer 04 Leverkusen*)
-- **Matchday validation** — Verifies that predictions and Kicktipp are on the same matchday before submitting
-- **Retry logic** — Automatically retries up to 3 times with a 5-second delay on failure
-- **Cookie banner handling** — Gracefully dismisses cookie consent popups on both websites
-- **Structured logging** — Clear, timestamped log output so you always know what's happening
+- **No browser required** — Both predicd and Kicktipp are driven over plain HTTP. A full run takes ~1 second instead of ~20
+- **Dry run by default** — Shows exactly what it would submit; writing requires `--submit`
+- **Verified writes** — After submitting, the saved tips are read back and compared against the plan
+- **Fixture-based matching** — Pairs games by home *and* away team, so it works even when the matchday label is missing (`Finale`, `Achtelfinale`, …)
+- **Smart team name mapping** — Normalisation handles most spelling differences (*TSG Hoffenheim* ↔ *1899 Hoffenheim*); per-league alias files cover the rest
+- **Never guesses** — Anything it cannot match confidently is reported by name and skipped, including Kicktipp bonus questions
+- **Protects manual tips** — Existing tips are left untouched unless you pass `--overwrite`
+- **Group discovery** — `--list-groups` reads your leagues straight from your account
+- **Several competitions per group** — A group playing Bundesliga *and* Champions League is handled from one `config.toml` entry
+- **All your groups in one go** — `--all-groups` works through every group in `config.toml` on a single login, with a summary at the end
+- **Interactive menu** — `-i` lets you pick groups with the arrow keys, shows a preview, and asks before writing anything
+- **Stops instead of half-tipping** — If any game on the page has no clear prediction, nothing is submitted at all
+- **Knows when it is too early** — Rounds that Kicktipp has not drawn yet are named as such, not blamed on your config
+- **Offline tests** — 198 tests run against saved HTML, catching layout changes before they cost you points
 
 ---
 
@@ -41,9 +49,27 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
 
 ## Prerequisites
 
-- **Python 3.8+**
-- **Google Chrome** (installed on your system)
-- **ChromeDriver** (matching your Chrome version) — [Download here](https://googlechromelabs.github.io/chrome-for-testing/)
+- **Python 3.11+** (`tomllib` from the standard library is used for `config.toml`)
+- **Google Chrome** — only for the optional `--browser` fallback; the default HTTP path needs no browser at all
+
+> **No manual ChromeDriver download needed.** Selenium 4.6+ ships with the
+> built-in *Selenium Manager*, which automatically fetches the driver matching
+> your installed Chrome version.
+
+On Debian/Ubuntu-based systems `pip` and `venv` are not
+part of the default Python installation and must be installed first:
+
+```bash
+sudo apt update
+sudo apt install -y python3-pip python3-venv
+```
+
+If Chrome is not installed yet:
+
+```bash
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y /tmp/chrome.deb
+```
 
 ---
 
@@ -56,10 +82,12 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
    cd Kicktipp-Autopilot
    ```
 
-2. **Install dependencies**
+2. **Create a virtual environment and install dependencies**
 
    ```bash
-   pip install selenium python-dotenv
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
    ```
 
 3. **Configure your credentials**
@@ -76,6 +104,12 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
    KICKTIPP_GROUP=yourGroupName
    ```
 
+   `KICKTIPP_GROUP` is the part of your league's URL between `kicktipp.de/`
+   and `/tippabgabe`.
+
+   > `.env` holds your credentials in plain text and is excluded from git via
+   > `.gitignore`. Never commit it.
+
 ---
 
 ## Configuration
@@ -86,13 +120,223 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
 | `KICKTIPP_PASSWORD` | Your Kicktipp account password       | Yes      |
 | `KICKTIPP_GROUP`    | Your Kicktipp group/league name (as it appears in the URL) | Yes      |
 
+### Several competitions in one group
+
+Many private groups cover more than one competition — Bundesliga *and*
+Champions League, say. Kicktipp shows **one competition per matchday**, and the
+game rows do not say which one. So you tell the bot once which competitions a
+group plays, and it loads the predictions for all of them:
+
+```bash
+cp example.config.toml config.toml
+```
+
+```toml
+[[gruppen]]
+name  = "bl-cl-1"
+ligen = ["bundesliga", "champions-league"]
+
+[[gruppen]]
+name  = "bundesliga-tippspiel"
+ligen = ["bundesliga"]
+```
+
+Which competition is actually due is never guessed — it follows from which
+predictions matched, and is printed on every run:
+
+```
+1. Spieltag - CL · erkannt als champions-league (18 von 18 Spielen)
+```
+
+`config.toml` is optional: without it, `--league` applies, defaulting to
+Bundesliga. It holds no secrets, but it does contain your group names and is
+therefore gitignored like `.env`.
+
 ---
 
 ## Usage
 
 ```bash
-python BL-Tipp.py
+source .venv/bin/activate   # if not already active
+python -m kicktipp_autopilot
 ```
+
+**Nothing is ever submitted without `--submit`.** The default is a dry run that
+shows exactly what would be entered.
+
+### Common commands
+
+```bash
+# Which leagues do I play in? (reads them from your Kicktipp account)
+python -m kicktipp_autopilot --list-groups
+
+# Preview — shows the planned tips, submits nothing
+python -m kicktipp_autopilot --group my-league
+
+# Actually submit
+python -m kicktipp_autopilot --group my-league --submit
+
+# Every group from config.toml in one run — preview first, then submit
+python -m kicktipp_autopilot --all-groups
+python -m kicktipp_autopilot --all-groups --submit
+
+# Pick the groups from a menu, preview, confirm
+python -m kicktipp_autopilot -i
+
+# Which matchdays does this group have, and what is each one called?
+python -m kicktipp_autopilot --group my-league --list-matchdays
+
+# A different competition or matchday
+python -m kicktipp_autopilot --league bundesliga,champions-league
+python -m kicktipp_autopilot --matchday 25
+python -m kicktipp_autopilot --list-leagues
+
+# Predictions only, no Kicktipp login at all
+python -m kicktipp_autopilot --no-kicktipp
+```
+
+### Options
+
+| Option | Effect |
+|---|---|
+| `--submit` | Actually enter and send the tips (otherwise: dry run) |
+| `--overwrite` | Also replace tips you already submitted (default: leave them alone) |
+| `--group NAME` | Kicktipp group, overrides `.env` |
+| `--all-groups` | Work through every group in `config.toml` on one login |
+| `-i`, `--interactive` | Pick groups from a menu, preview, confirm before writing |
+| `--league NAME\|ID` | Competition. Repeatable or comma-separated. Overrides `config.toml`; default `bundesliga` |
+| `--matchday N` | Matchday of the group — the `spieltagIndex`, see below (default: the upcoming one) |
+| `--allow-partial` | Submit even if some games have no clear prediction (default: abort, write nothing) |
+| `--no-kicktipp` | Only fetch predictions, no login |
+| `--list-matchdays` | Show the group's matchdays with their `--matchday` number |
+| `--browser` | Use Selenium instead of HTTP (fallback, ~20× slower) |
+| `--show-browser` | Show the browser window (implies `--browser`) |
+| `-v` | Verbose output |
+
+### `--matchday` is the group's index, not the number on screen
+
+In a group with one competition the two are the same. In a mixed group they are
+not: the index counts through *all* competitions, so `--matchday 25` is the page
+titled `8. Spieltag - CL`. `--list-matchdays` prints the mapping:
+
+```
+ --matchday   Bezeichnung                  Wettbewerb
+         23   17. Spieltag                 —
+         24   7. Spieltag - CL             CL
+         25   8. Spieltag - CL ← aktuell   CL
+```
+
+### When a game cannot be matched
+
+A Kicktipp page shows exactly one competition, so every game on it should be
+matchable. If any is left over, that usually means a competition is missing from
+`config.toml` — or a team needs an alias. In that case **nothing is submitted**:
+
+```
+Fehler: 4 von 18 Spielen ohne eindeutige Vorhersage: Sporting Lissabon vs
+FC Bologna; … Geladen waren: bundesliga. Fehlt eine Liga in config.toml, oder
+braucht ein Team einen Alias in matching/aliases/? Nichts abgesendet.
+Zum Absenden der übrigen Tipps: --allow-partial
+```
+
+The dry run never aborts — it always shows the full picture first.
+
+### All groups in one run
+
+`--all-groups` works through every `[[gruppen]]` entry of your `config.toml` —
+one login, one predicd fetch per competition, one summary at the end:
+
+```
+                                Zusammenfassung
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Gruppe               ┃ Spieltag         ┃ erkannt ┃ getippt ┃ Status                ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━┩
+│ bundesliga-tippspiel │ 1. Spieltag      │     9/9 │       9 │ eingetragen           │
+│ cl-tippspiel         │ —                │       — │       — │ noch nicht ausgelost  │
+│ bl-cl-1              │ 8. Spieltag - CL │       — │       — │ kein offener Spieltag │
+│ bl-cl-2              │ Finale           │       — │       — │ kein offener Spieltag │
+└──────────────────────┴──────────────────┴─────────┴─────────┴───────────────────────┘
+```
+
+The groups come from `config.toml`, not from your account — expired seasons stay
+out of it, and every group listed there has its competitions on record.
+
+**A failing group does not stop the others.** Each group is handled on its own;
+whatever goes wrong is printed under that group and repeated in the summary,
+while the remaining groups are still tipped. The exit code is `1` if any group
+actually failed. *Not* counted as failures: a group with no open matchday and a
+round Kicktipp has not drawn yet — neither is something you can act on, and a
+permanently red exit code would make the signal worthless.
+
+Since the `spieltagIndex` counts per group, `--matchday` cannot be combined with
+`--all-groups`; the same goes for `--league`, which would override every group's
+competitions. Both are refused before anything is loaded.
+
+### The interactive menu
+
+`kicktipp -i` asks which groups to tip (space to toggle, enter to confirm), shows
+the full preview, and only then asks whether to submit — defaulting to *No*.
+Preview and submission share the same session and the same predictions, so what
+gets written is exactly what you saw.
+
+The menu needs a terminal. In a script or a systemd timer it refuses to start and
+points to `--all-groups` instead, rather than silently waiting for an answer
+nobody will give.
+
+### Before the draw
+
+Kicktipp creates the whole schedule up front — for a Champions League group all
+17 rounds from `1. Spieltag` to `Finale` — and fills every row with `unbekannt`
+until the draw happens. Those games are not a configuration problem, so they are
+reported as such and never block anything:
+
+```
+cl-tippspiel: Kicktipp hat die Paarungen für 1. Spieltag noch nicht gesetzt —
+alle 18 Spiele stehen als „unbekannt" in der Tabelle. Das ist kein Fehler in der
+Konfiguration; sobald ausgelost ist, funktioniert der Lauf. Nichts abgesendet.
+```
+
+If a round is only partly drawn, the known games are tipped and the rest is
+listed as `noch nicht ausgelost` — just run again once the draw is complete.
+
+### Two ways to reach Kicktipp
+
+The default is plain HTTP. Selenium remains available via `--browser` as a
+fallback in case Kicktipp changes something — and as an independent second
+opinion: both paths share the same parser and must produce identical results,
+which is how a silent misread was caught during development.
+
+```bash
+kicktipp              # HTTP      ~1 s
+kicktipp --browser    # Selenium  ~11 s
+```
+
+> **Why HTTP is the better default:** Kicktipp's cookie banner loads
+> asynchronously and covers the "Tipps speichern" button, which made the
+> browser path fail until it was worked around with scrolling, re-dismissing
+> and a scripted click. Over HTTP that problem does not exist at all.
+
+### How matches are paired
+
+Predictions are matched to Kicktipp games by **fixture** — both the home *and*
+away team must match. Team names are normalised first (`TSG Hoffenheim` and
+`1899 Hoffenheim` become the same key), with a per-league alias file for the
+rest. If a game cannot be matched confidently, it is reported by name and
+skipped — never guessed. Kicktipp bonus questions are skipped the same way.
+
+This is also what makes several competitions work: the predictions of every
+configured competition go into one pool, and the pairing decides. No matchday
+numbers have to line up — which is just as well, since Kicktipp's numbering is
+the group's own and matches neither competition's.
+
+Should the same pairing appear twice — Bayern vs Dortmund exists in the league
+*and* in the cup — the kickoff date decides. If even that leaves it open, the
+game is reported as ambiguous and left untipped rather than guessed.
+
+### Legacy script
+
+`BL-Tipp.py` is the original single-file version. It still works and is kept as
+a fallback, but it is no longer developed.
 
 The bot will:
 
@@ -128,11 +372,62 @@ The bot will:
 
 ```
 Kicktipp-Autopilot/
-├── BL-Tipp.py      # Main automation script
-├── example.env      # Template for environment variables
-├── .gitignore       # Ignores .env and other local files
-└── README.md        # You are here
+├── kicktipp_autopilot/
+│   ├── cli.py            # Command line: arguments and dispatch
+│   ├── runner.py         # The actual run: match, render, submit, one or many groups
+│   ├── interactive.py    # The menu behind -i
+│   ├── config.py         # .env + config.toml + league registry
+│   ├── models.py         # Prediction, Fixture, MatchResult
+│   ├── errors.py         # Typed errors
+│   ├── selectors.py      # ALL CSS selectors, with verification dates
+│   ├── sources/
+│   │   └── predicd.py    # Prediction scraping over plain HTTP (no browser)
+│   ├── matching/
+│   │   ├── normalize.py  # "1. FSV Mainz 05" -> "mainz"
+│   │   ├── matcher.py    # Fixture-based pairing, never guesses
+│   │   └── aliases/      # Per-league name aliases
+│   └── targets/
+│       ├── base.py           # Shared interface for both transports
+│       ├── kicktipp_parse.py # HTML -> objects (shared, offline-testable)
+│       ├── kicktipp_http.py  # Default transport: plain HTTP
+│       └── kicktipp.py       # Fallback transport: Selenium
+├── tests/                # 198 tests, run fully offline
+│   ├── test_mehrere_ligen.py  # Groups with several competitions
+│   ├── test_alle_gruppen.py   # --all-groups: loop, isolation, summary
+│   ├── test_interaktiv.py     # The menu, with questionary stubbed out
+│   └── fixtures/         # Saved HTML pages (anonymised)
+├── kicktipp              # Launcher script (symlinked into ~/.local/bin)
+├── BL-Tipp.py            # Original single-file version (fallback)
+├── pyproject.toml        # Package metadata and `kicktipp` entry point
+├── requirements.txt      # Pinned dependencies
+├── example.env           # Template for environment variables
+├── example.config.toml   # Template for the group/competition mapping
+├── .gitignore            # Ignores .env, config.toml, .venv and other local files
+├── plan.md               # Development roadmap
+└── README.md             # You are here
 ```
+
+## Tests
+
+```bash
+pytest -q
+```
+
+All tests run offline against saved HTML fixtures — no network, no browser, no
+credentials. If predicd or Kicktipp change their layout, the tests fail before a
+wrong tip can reach your account.
+
+The Kicktipp fixtures are anonymised: e-mail, display name, user ID, season ID
+and the group name are replaced; only the structure is real. The Champions
+League fixture comes from a real Bundesliga+CL group whose season had already
+ended, so its result cells carried no input fields any more — those were
+restored from the tippable Bundesliga page of the same account. Everything else
+is untouched.
+
+The most important tests cover the **submit body**. Kicktipp processes the tip
+form as a whole — any field missing from the POST counts as cleared. That
+includes the answers to the bonus questions, so the body is always rebuilt from
+the page that was just read, never assembled by hand.
 
 ---
 

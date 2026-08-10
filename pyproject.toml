@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kicktipp-autopilot"
+version = "0.3.0"
+description = "Holt Spielvorhersagen von predicd.com und trägt sie bei Kicktipp ein."
+readme = "README.md"
+# 3.11 wegen tomllib aus der Standardbibliothek (config.toml).
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+dependencies = [
+    "httpx>=0.28",
+    "beautifulsoup4>=4.13",
+    "rich>=14.0",
+    "questionary>=2.0",
+    "python-dotenv>=1.1",
+    # Nur für die Rückfallebene `--browser` nötig; der Standardweg läuft ohne.
+    "selenium>=4.46",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+kicktipp = "kicktipp_autopilot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["kicktipp_autopilot*"]
+
+[tool.setuptools.package-data]
+kicktipp_autopilot = ["matching/aliases/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

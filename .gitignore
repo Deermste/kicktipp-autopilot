@@ -1,2 +1,25 @@
+# Zugangsdaten — niemals committen!
 .env
-BL_Spuort.py
+
+# Eigene Gruppen- und Ligazuordnung (enthält Gruppennamen; Vorlage:
+# example.config.toml)
+config.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtuelle Umgebung
+.venv/
+venv/
+
+# Laufzeit-Artefakte
+*.log
+state/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

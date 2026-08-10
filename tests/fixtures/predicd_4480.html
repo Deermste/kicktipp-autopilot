@@ -1,0 +1,3250 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<!-- Basic Page Info -->
+<!-- Viewport Meta Tag -->
+<!-- Google Tag Manager -->
+<!-- End Google Tag Manager -->
+<title>Predicd | Champions League - KI-gestützte Fußball Vorhersagen &amp; Tipps</title>
+<!-- Site favicon -->
+<!-- <link rel="shortcut icon" type="image/png" href="/static/website/images/favicon.ico" /> -->
+<!-- Preconnect and Prefetch -->
+<!-- CSS -->
+<!-- PWA - Start -->
+<!-- PWA - End -->
+</head>
+<body class="sidebar-light header-light">
+<!-- Google Tag Manager (noscript) -->
+<!-- End Google Tag Manager (noscript) -->
+<div class="header">
+<div class="header-left">
+<div class="menu-icon dw dw-menu"></div>
+<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+<div class="brand-logo-smallScreen">
+<a href="/de/football/">
+<picture>
+<!-- Image for screen width up to 380px -->
+<source media="(max-width: 360px)" srcset="/static/website/images/Predicd_Logo_A_IconOnly_100.webp"/>
+<!-- Default image for larger screen widths -->
+<img alt="" class="logoImage-smallScreen" src="/static/website/images/Predicd_Logo_A_300.webp"/>
+</picture>
+</a>
+</div>
+<div class="header-search">
+<div class="form-group mb-0">
+<i class="dw dw-search2 search-icon"></i>
+<input class="form-control search-input" id="teamSearchInput" placeholder="Team suchen" type="text"/>
+<div class="dropdown">
+<ul class="dropdown-menu dropdown-menu-right" id="teamSearchDropdown"></ul>
+</div>
+</div>
+</div>
+<!-- <div class="header-search">
+				<form>
+					<div class="form-group mb-0">
+						<i class="dw dw-search2 search-icon"></i>
+						<input type="text" class="form-control search-input" placeholder="Search Here">
+						<div class="dropdown">
+							<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+								<i class="ion-arrow-down-c"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="form-group row">
+									<label class="col-sm-12 col-md-2 col-form-label">From</label>
+									<div class="col-sm-12 col-md-10">
+										<input class="form-control form-control-sm form-control-line" type="text">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-12 col-md-2 col-form-label">To</label>
+									<div class="col-sm-12 col-md-10">
+										<input class="form-control form-control-sm form-control-line" type="text">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-12 col-md-2 col-form-label">Subject</label>
+									<div class="col-sm-12 col-md-10">
+										<input class="form-control form-control-sm form-control-line" type="text">
+									</div>
+								</div>
+								<div class="text-right">
+									<button class="btn btn-primary">Search</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div> -->
+</div>
+<div class="header-right">
+<div class="dashboard-setting user-notification">
+<div class="dropdown">
+<a class="dropdown-toggle no-arrow" data-toggle="right-sidebar" href="javascript:;">
+<i class="dw dw-settings2"></i>
+</a>
+</div>
+</div>
+<!-- <div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="/static/website/template/vendors/images/photo1.jpg" alt="">
+						</span>
+						<span class="user-name">Ross C. Lopez</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
+						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
+						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
+				</div>
+			</div> -->
+</div>
+</div>
+<div class="right-sidebar">
+<div class="sidebar-title">
+<h3 class="weight-600 font-18">
+<i class="dw dw-settings2" style="padding-right: 1rem;"></i>Einstellungen
+			</h3>
+<div class="close-sidebar" data-toggle="right-sidebar-close">
+<i aria-hidden="true" class="icon-copy fa fa-close"></i>
+</div>
+</div>
+<div class="right-sidebar-body customscroll">
+<div class="right-sidebar-body-content">
+<h4 class="weight-600 font-16 pb-10">Sprache</h4>
+<div class="pb-30 mb-10">
+<form action="/i18n/setlang/" method="post" style="margin-top: -1rem;">
+<input name="csrfmiddlewaretoken" type="hidden" value="kh6937g1g5Neaz8P6ZetRfYybSLusJtl1Kwd4LkPg9aqHVbT50VDygWnV58DIosV"/>
+<input name="next" type="hidden" value=""/>
+<div class="dropdown d-inline-block">
+<div aria-expanded="false" class="btn dropdown-toggle languageSelect-dropdown" data-bs-toggle="dropdown" id="languageDropdown" type="button">
+								
+									Deutsch
+								
+							</div>
+<ul class="dropdown-menu languageSelect-dropdown-menu dropdown-menu-bottom">
+<li style="padding-left: 0;">
+<button class="dropdown-item" onclick="setLanguage('en', 'English')" type="button">
+											English
+										</button>
+</li>
+<li style="padding-left: 0;">
+<button class="dropdown-item" onclick="setLanguage('de', 'Deutsch')" type="button">
+											Deutsch
+										</button>
+</li>
+<li style="padding-left: 0;">
+<button class="dropdown-item" onclick="setLanguage('es', 'Español')" type="button">
+											Español
+										</button>
+</li>
+</ul>
+</div>
+<input id="selectedLanguage" name="language" type="hidden" value="de"/> <!-- Das ausgewählte Sprachkürzel speichern -->
+<div class="text-center d-inline-block" style="margin-top: 1rem;">
+<button class="btn btn-outline-secondary" type="submit"><i aria-hidden="true" class="icon-copy fa fa-check"></i></button>
+</div>
+</form>
+</div>
+<h4 class="weight-600 font-16 pb-10">Dark Mode</h4>
+<div class="sidebar-btn-group pb-30 mb-10">
+<div class="form-check form-switch dark-mode-switch">
+<input class="form-check-input" id="darkModeSwitch" type="checkbox"/>
+<label class="form-check-label" for="darkModeSwitch"><i aria-hidden="true" class="icon-copy dw dw-light-bulb"></i></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="left-side-bar">
+<div class="brand-logo">
+<a href="/de/football/">
+<img alt="" class="dark-logo" src="/static/website/images/Predicd_Logo_A_300.webp"/>
+<img alt="" class="light-logo" src="/static/website/images/Predicd_Logo_A_300_DarkMode.webp"/>
+</a>
+<div class="close-sidebar" data-toggle="left-sidebar-close">
+<i class="ion-close-round"></i>
+</div>
+</div>
+<div class="menu-block customscroll">
+<div class="sidebar-menu">
+<ul id="accordion-menu">
+<li>
+<a class="dropdown-toggle no-arrow" href="/de/football/">
+<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+</a>
+</li>
+<li>
+<a class="dropdown-toggle no-arrow" href="/de/football/match-schedule/">
+<span class="micon dw dw-calendar"></span><span class="mtext">Spielplan</span>
+</a>
+</li>
+<!-- <li>
+						<div class="dropdown-divider"></div>
+					</li> -->
+<li>
+<div class="sidebar-small-cap">Top-Ligen</div>
+</li>
+<li>
+<a class="dropdown-toggle no-arrow" href="/de/football/league/4429/">
+<span class="micon fa fa-star"></span><span class="mtext">Weltmeisterschaft 2026</span>
+</a>
+</li>
+<li>
+<div class="sidebar-small-cap">Ligen</div>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">England</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4328/">Premier League</a></li>
+<li><a href="/de/football/league/4329/">EFL Championship</a></li>
+<li><a href="/de/football/league/4396/">League One</a></li>
+<li><a href="/de/football/league/4397/">League Two</a></li>
+<li><a href="/de/football/league/4482/">FA Cup</a></li>
+<li><a href="/de/football/league/4570/">EFL Cup</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Deutschland</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4331/">1. Bundesliga</a></li>
+<li><a href="/de/football/league/4399/">2. Bundesliga</a></li>
+<li><a href="/de/football/league/4639/">3. Liga</a></li>
+<li><a href="/de/football/league/4748/">Regionalliga Bayern</a></li>
+<li><a href="/de/football/league/4695/">Regionalliga Nord</a></li>
+<li><a href="/de/football/league/4749/">Regionalliga Nordost</a></li>
+<li><a href="/de/football/league/4747/">Regionalliga Südwest</a></li>
+<li><a href="/de/football/league/4746/">Regionalliga West</a></li>
+<li><a href="/de/football/league/4485/">DFB-Pokal</a></li>
+<li><a href="/de/football/league/4903/">DFL-Supercup</a></li>
+<li><a href="/de/football/league/5204/">Frauen-Bundesliga</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Spanien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4335/">Primera División</a></li>
+<li><a href="/de/football/league/4400/">Segunda División</a></li>
+<li><a href="/de/football/league/4483/">Copa del Rey</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Italien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4332/">Serie A</a></li>
+<li><a href="/de/football/league/4394/">Serie B</a></li>
+<li><a href="/de/football/league/4506/">Coppa Italia</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Frankreich</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4334/">Ligue 1</a></li>
+<li><a href="/de/football/league/4401/">Ligue 2</a></li>
+<li><a href="/de/football/league/4484/">Coupe de France</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Argentinien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4406/">Liga Profesional de Fútbol</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Australien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4356/">A-League Men</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Österreich</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4621/">Bundesliga</a></li>
+<li><a href="/de/football/league/4796/">2. Liga</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Belgien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4338/">Jupiler Pro League</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Brasilien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4351/">Série A</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Kroatien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4629/">1. HNL</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Tschechien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4631/">Chance Liga</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Dänemark</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4340/">Superliga</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Finnland</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4636/">Veikkausliiga</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Griechenland</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4336/">Super League</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">International</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4503/">Klub-Weltmeisterschaft</a></li>
+<li><a href="/de/football/league/4480/">Champions League</a></li>
+<li><a href="/de/football/league/4481/">Europa League</a></li>
+<li><a href="/de/football/league/5071/">Europa Conference League</a></li>
+<li><a href="/de/football/league/4889/">Women’s Champions League</a></li>
+<li><a href="/de/football/league/4501/">Copa Libertadores</a></li>
+<li><a href="/de/football/league/4429/">Weltmeisterschaft 2026</a></li>
+<li><a href="/de/football/league/4865/">EM Frauen 2025</a></li>
+<li><a href="/de/football/league/4499/">Copa América</a></li>
+<li><a href="/de/football/league/4490/">Nations League</a></li>
+<li><a href="/de/football/league/4496/">Afrika-Cup - Qualifikation</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Japan</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4633/">J1 League</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Mexiko</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4350/">Liga MX</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Niederlande</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4337/">Eredivisie</a></li>
+<li><a href="/de/football/league/4641/">Eerste Divisie</a></li>
+<li><a href="/de/football/league/4902/">KNVB-Pokal</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Norwegen</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4358/">Eliteserien</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Polen</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4422/">Ekstraklasa</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Portugal</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4344/">Primeira Liga</a></li>
+<li><a href="/de/football/league/4510/">Taça de Portugal</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Rumänien</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4691/">Liga 1</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Schottland</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4330/">Premiership</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Südkorea</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4689/">K League 1</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Schweden</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4347/">Allsvenskan</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Schweiz</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4675/">Super League</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Türkei</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4339/">Süper Lig</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">Ukraine</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4354/">Premjer-Liha</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" href="javascript:;">
+<span class="micon dw dw-flag"></span><span class="mtext">USA</span>
+</a>
+<ul class="submenu">
+<li><a href="/de/football/league/4346/">Major League Soccer</a></li>
+</ul>
+</li>
+<li>
+<a class="dropdown-toggle no-arrow" href="/de/contact/">
+<span class="micon dw dw-paper-plane1"></span><span class="mtext">Kontakt</span>
+</a>
+</li>
+<li>
+<a class="dropdown-toggle no-arrow" href="/de/about-us/">
+<span class="micon dw dw-group"></span><span class="mtext">Über Uns</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mobile-menu-overlay"></div>
+<div class="main-container">
+<div class="pd-ltr-20 predicdMain" id="reloadArea" style="padding-top: 0px;">
+<!-- <div class="xpull">
+				<div class="xpull__start-msg">
+					<div class="xpull__start-msg-text">
+						Aktualisieren
+					</div>
+					<div class="xpull__arrow"></div>
+				</div>
+				<div class="xpull__spinner">
+					<div class="xpull__spinner-circle"></div>
+				</div>
+			</div> -->
+<div class="row mainRow">
+<!-- <div class="col-xl-1 extraColForBigScreens"></div> -->
+<div class="col-12 col-xl-9">
+<div class="page-header">
+<div class="row">
+<div class="col-md-12 col-sm-12" style="margin-top: -1.5rem;">
+<div class="title">
+<h2>Champions League</h2>
+<p style="margin-bottom: 0em;">Saison 2026-2027</p>
+<ul class="meta">
+<li>International</li>
+</ul>
+</div>
+<!-- <nav aria-label="breadcrumb" role="navigation">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Cards</li>
+				</ol>
+			</nav> -->
+</div>
+</div>
+</div>
+<!-- Predicd | Horiz. | League | TopContent -->
+<ins class="adsbygoogle" data-ad-client="ca-pub-4240094275012650" data-ad-format="auto" data-ad-slot="8662583874" data-full-width-responsive="true" style="display:block"></ins>
+<ul class="nav nav-tabs d-lg-flex standings-buttons" id="leagueMainTab" role="tablist" style="--bs-nav-link-color: #6b7770;margin-bottom: -1rem;">
+<li class="nav-item" role="presentation">
+<button aria-controls="fixtures-tab-pane" aria-selected="true" class="nav-link active" data-bs-target="#fixtures-tab-pane" data-bs-toggle="tab" id="fixtures-tab" role="tab">Spieltage</button>
+</li>
+</ul>
+<div class="tab-content" id="leagueMainTabContent-fixtures">
+<div aria-labelledby="fixtures-tab" class="tab-pane fade show active" id="fixtures-tab-pane" role="tabpanel" tabindex="0">
+<div class="row">
+<div class="col-12 mb-30">
+<div class="content">
+<div class="carousel slide" data-bs-interval="false" data-bs-touch="true" id="carouselExampleControls">
+<header class="justify-content-center" style="display: flex;">
+<h2 class="major flex-fill" style="margin-bottom: 0.5rem;margin-top: 1rem;">
+<span class="home-section-title">
+<span id="fixturesCarouselButton_Prev" role="button" style="padding-left: 0rem;visibility: hidden;">
+<i class="fa-solid fa-chevron-left" style="color: #acadac;top: -0.1rem;position: absolute;"></i>
+</span>
+<span class="home-section-title" id="matchdayNumber" style="top: 0em; padding: 0 0em 0 0em;">
+													Qualifikation
+												</span>
+<span id="fixturesCarouselButton_Next" role="button" style="padding-right: 0rem; right: 1rem;visibility: hidden;">
+<i class="fa-solid fa-chevron-right" style="color: #acadac;top: -0.1rem;position: absolute;"></i>
+</span>
+</span>
+</h2>
+</header>
+<div class="carousel-inner">
+<span id="matchDayCarouselItem">
+<div class="carousel-item active">
+<section class="box features" matchday="400">
+<div class="table-responsive">
+<table class="table matches-table table-bordered">
+<thead>
+<tr>
+<th class="col-1 first-td align-middle" scope="col">Zeit</th>
+<th class="col-5 inner-td align-middle" scope="col" style="word-spacing: 100vw;">Heim Gast</th>
+<th class="col-2 inner-td text-center align-middle" scope="col">Prognose</th>
+<th class="col-2 inner-td text-center align-middle" scope="col">Sicherheit</th>
+<th class="col-2 inner-td text-center align-middle" scope="col">Ergebnis</th>
+<th class="col-2 last-td text-center align-middle" scope="col"></th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td class="hiddenRow" colspan="6" style="border-width: 0;padding: 0 !important;">
+<div class="accordian-body collapse" id="demo_2491740">
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 matchStats">
+<div class="card card-body" style="--bs-card-spacer-y: 0.45rem;">
+<h5 class="card-title matchStatsCardTitle">Spiel-Info</h5>
+<div class="table-responsive table-responsive-matchDetailsGeneral">
+<table class="table table-borderless match-info-table">
+<tbody>
+<tr class="table-separator">
+<td class="half-width-matchInfo-col1">Stadion:</td>
+<td class="half-width-matchInfo-col2">
+<span class="truncate-on-small-matchDetailsGeneral">Yerevan Football Academy</span>
+<span class="no-truncate-on-small-matchDetailsGeneral">Yerevan Football Academy</span>
+</td>
+</tr>
+<tr class="table-separator">
+<td class="half-width-matchInfo-col1">Siegchance:</td>
+<td class="half-width-matchInfo-col2">
+<div class="winProb-cell-content-container">
+<div class="progress custom-progress-bar">
+<div aria-label="Heimsieg" aria-valuemax="100" aria-valuemin="0" aria-valuenow="34" class="progress-bar homeWin_Progressbar" role="progressbar" style="width: 34%;">34%</div>
+<div aria-label="Unentschieden" aria-valuemax="100" aria-valuemin="0" aria-valuenow="29" class="progress-bar draw_Progressbar" role="progressbar" style="width: 29%;">29%</div>
+<div aria-label="Auswärtssieg" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37" class="progress-bar awayWin_Progressbar" role="progressbar" style="width: 37%;">37%</div>
+</div>
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 matchStats">
+<div class="card card-body" style="--bs-card-spacer-y: 0.45rem;">
+<h5 class="card-title matchStatsCardTitle underline-home">Ararat-Armenia</h5>
+<div class="table-responsive table-responsive-matchDetailsGeneral">
+<table class="table table-borderless match-info-table">
+<tbody>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form - Heim:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 matchStats">
+<div class="card card-body" style="--bs-card-spacer-y: 0.45rem;">
+<h5 class="card-title matchStatsCardTitle underline-away">
+																							Riga FC
+																						</h5>
+<div class="table-responsive table-responsive-matchDetailsGeneral">
+<table class="table table-borderless match-info-table">
+<tbody>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form - Auswärts:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532701" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532701" style="word-spacing: 100vw;">21.07. 16:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Iberia 1999 Tiflis</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532701" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532701" style="text-align: center;"><span id="matchResultHomeScore-2532701">0</span> - <span id="matchResultAwayScore-2532701">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532701/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492398" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492398" style="word-spacing: 100vw;">21.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Thun</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492398" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492398" style="text-align: center;"><span id="matchResultHomeScore-2492398">1</span> - <span id="matchResultAwayScore-2492398">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492398/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492396" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492396" style="word-spacing: 100vw;">21.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Górnik Zabrze</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492396" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492396" style="text-align: center;"><span id="matchResultHomeScore-2492396">1</span> - <span id="matchResultAwayScore-2492396">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492396/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492397" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492397" style="word-spacing: 100vw;">21.07. 18:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Heart of Midlothian</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492397" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492397" style="text-align: center;"><span id="matchResultHomeScore-2492397">4</span> - <span id="matchResultAwayScore-2492397">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492397/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532703" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532703" style="word-spacing: 100vw;">21.07. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Larne FC</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532703" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532703" style="text-align: center;"><span id="matchResultHomeScore-2532703">0</span> - <span id="matchResultAwayScore-2532703">4</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532703/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492402" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492402" style="word-spacing: 100vw;">28.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Thun</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492402" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492402" style="text-align: center;"><span id="matchResultHomeScore-2492402">3</span> - <span id="matchResultAwayScore-2492402">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492402/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492399" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492399" style="word-spacing: 100vw;">28.07. 18:45</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Heart of Midlothian</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492399" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492399" style="text-align: center;"><span id="matchResultHomeScore-2492399">0</span> - <span id="matchResultAwayScore-2492399">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492399/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492400" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492400" style="word-spacing: 100vw;">29.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Górnik Zabrze</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492400" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492400" style="text-align: center;"><span id="matchResultHomeScore-2492400">1</span> - <span id="matchResultAwayScore-2492400">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492400/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532706" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532706" style="word-spacing: 100vw;">29.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Larne FC</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532706" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_3.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532706" style="text-align: center;"><span id="matchResultHomeScore-2532706">5</span> - <span id="matchResultAwayScore-2532706">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532706/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532708" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532708" style="word-spacing: 100vw;">29.07. 18:15</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Iberia 1999 Tiflis</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532708" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532708" style="text-align: center;"><span id="matchResultHomeScore-2532708">1</span> - <span id="matchResultAwayScore-2532708">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532708/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552936" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552936" style="word-spacing: 100vw;">04.08. 16:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Mjällby AIF</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552936" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552936" style="text-align: center;"><span id="matchResultHomeScore-2552936">1</span> - <span id="matchResultAwayScore-2552936">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552936/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552932" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552932" style="word-spacing: 100vw;">04.08. 17:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Hapoel Be’er Scheva</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552932" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552932" style="text-align: center;"><span id="matchResultHomeScore-2552932">1</span> - <span id="matchResultAwayScore-2552932">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552932/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544172" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544172" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sparta Prag</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympique Lyon</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544172" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544172" style="text-align: center;"><span id="matchResultHomeScore-2544172">2</span> - <span id="matchResultAwayScore-2544172">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544172/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552934" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552934" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Kauno Žalgiris</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552934" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_3.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552934" style="text-align: center;"><span id="matchResultHomeScore-2552934">5</span> - <span id="matchResultAwayScore-2552934">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552934/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544171" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544171" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympiakos Piräus</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">NEC Nijmegen</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544171" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544171" style="text-align: center;"><span id="matchResultHomeScore-2544171">0</span> - <span id="matchResultAwayScore-2544171">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544171/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544173" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544173" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">St. Gilloise</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FK Bodø/Glimt</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544173" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544173" style="text-align: center;"><span id="matchResultHomeScore-2544173">3</span> - <span id="matchResultAwayScore-2544173">3</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544173/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552933" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552933" style="word-spacing: 100vw;">05.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552933" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552933" style="text-align: center;"><span id="matchResultHomeScore-2552933">2</span> - <span id="matchResultAwayScore-2552933">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552933/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544175" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544175" style="word-spacing: 100vw;">11.08. 16:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FK Bodø/Glimt</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">St. Gilloise</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544175">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544175" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544175/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552941" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552941" style="word-spacing: 100vw;">11.08. 17:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Kauno Žalgiris</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552941">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552941" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552941/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544176" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544176" style="word-spacing: 100vw;">11.08. 17:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">NEC Nijmegen</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympiakos Piräus</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544176">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544176" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544176/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552937" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552937" style="word-spacing: 100vw;">11.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Hapoel Be’er Scheva</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552937">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552937" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552937/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552939" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552939" style="word-spacing: 100vw;">11.08. 18:15</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Mjällby AIF</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552939">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552939" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552939/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552938" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552938" style="word-spacing: 100vw;">11.08. 18:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552938">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552938" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552938/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544174" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544174" style="word-spacing: 100vw;">11.08. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympique Lyon</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sparta Prag</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544174">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544174" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544174/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2558133" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2558133" style="word-spacing: 100vw;">19.08. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Celtic Glasgow</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">LASK</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2558133">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2558133" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2558133/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2558134" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2558134" style="word-spacing: 100vw;">25.08. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">LASK</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Celtic Glasgow</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2558134">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2558134" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2558134/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</span>
+<span id="matchDayCarouselItem">
+<div class="carousel-item active">
+<section class="box features" matchday="400">
+<div class="table-responsive">
+<table class="table matches-table table-bordered">
+<thead>
+<tr>
+<th class="col-1 first-td align-middle" scope="col">Zeit</th>
+<th class="col-5 inner-td align-middle" scope="col" style="word-spacing: 100vw;">Heim Gast</th>
+<th class="col-2 inner-td text-center align-middle" scope="col">Prognose</th>
+<th class="col-2 inner-td text-center align-middle" scope="col">Sicherheit</th>
+<th class="col-2 inner-td text-center align-middle" scope="col">Ergebnis</th>
+<th class="col-2 last-td text-center align-middle" scope="col"></th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td class="hiddenRow" colspan="6" style="border-width: 0;padding: 0 !important;">
+<div class="accordian-body collapse" id="demo_2491740">
+<div class="container-fluid">
+<div class="row justify-content-center">
+<div class="col-12 matchStats">
+<div class="card card-body" style="--bs-card-spacer-y: 0.45rem;">
+<h5 class="card-title matchStatsCardTitle">Spiel-Info</h5>
+<div class="table-responsive table-responsive-matchDetailsGeneral">
+<table class="table table-borderless match-info-table">
+<tbody>
+<tr class="table-separator">
+<td class="half-width-matchInfo-col1">Stadion:</td>
+<td class="half-width-matchInfo-col2">
+<span class="truncate-on-small-matchDetailsGeneral">Yerevan Football Academy</span>
+<span class="no-truncate-on-small-matchDetailsGeneral">Yerevan Football Academy</span>
+</td>
+</tr>
+<tr class="table-separator">
+<td class="half-width-matchInfo-col1">Siegchance:</td>
+<td class="half-width-matchInfo-col2">
+<div class="winProb-cell-content-container">
+<div class="progress custom-progress-bar">
+<div aria-label="Heimsieg" aria-valuemax="100" aria-valuemin="0" aria-valuenow="34" class="progress-bar homeWin_Progressbar" role="progressbar" style="width: 34%;">34%</div>
+<div aria-label="Unentschieden" aria-valuemax="100" aria-valuemin="0" aria-valuenow="29" class="progress-bar draw_Progressbar" role="progressbar" style="width: 29%;">29%</div>
+<div aria-label="Auswärtssieg" aria-valuemax="100" aria-valuemin="0" aria-valuenow="37" class="progress-bar awayWin_Progressbar" role="progressbar" style="width: 37%;">37%</div>
+</div>
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 matchStats">
+<div class="card card-body" style="--bs-card-spacer-y: 0.45rem;">
+<h5 class="card-title matchStatsCardTitle underline-home">Ararat-Armenia</h5>
+<div class="table-responsive table-responsive-matchDetailsGeneral">
+<table class="table table-borderless match-info-table">
+<tbody>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form - Heim:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 matchStats">
+<div class="card card-body" style="--bs-card-spacer-y: 0.45rem;">
+<h5 class="card-title matchStatsCardTitle underline-away">
+																							Riga FC
+																						</h5>
+<div class="table-responsive table-responsive-matchDetailsGeneral">
+<table class="table table-borderless match-info-table">
+<tbody>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+<tr class="table-separator">
+<td class="half-width-matchInfoTeam-col1">Form - Auswärts:</td>
+<td class="half-width-matchInfoTeam-col2">
+<span class="form-icons-container">
+																												
+																												Bisher keine Spiele
+																												
+																											</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532701" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532701" style="word-spacing: 100vw;">21.07. 16:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Iberia 1999 Tiflis</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532701" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532701" style="text-align: center;"><span id="matchResultHomeScore-2532701">0</span> - <span id="matchResultAwayScore-2532701">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532701/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492398" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492398" style="word-spacing: 100vw;">21.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Thun</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492398" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492398" style="text-align: center;"><span id="matchResultHomeScore-2492398">1</span> - <span id="matchResultAwayScore-2492398">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492398/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492396" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492396" style="word-spacing: 100vw;">21.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Górnik Zabrze</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492396" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492396" style="text-align: center;"><span id="matchResultHomeScore-2492396">1</span> - <span id="matchResultAwayScore-2492396">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492396/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492397" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492397" style="word-spacing: 100vw;">21.07. 18:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Heart of Midlothian</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492397" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492397" style="text-align: center;"><span id="matchResultHomeScore-2492397">4</span> - <span id="matchResultAwayScore-2492397">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492397/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532703" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532703" style="word-spacing: 100vw;">21.07. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Larne FC</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532703" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532703" style="text-align: center;"><span id="matchResultHomeScore-2532703">0</span> - <span id="matchResultAwayScore-2532703">4</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532703/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492402" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492402" style="word-spacing: 100vw;">28.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/sovjgl1699462359.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Thun</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492402" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492402" style="text-align: center;"><span id="matchResultHomeScore-2492402">3</span> - <span id="matchResultAwayScore-2492402">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492402/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492399" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492399" style="word-spacing: 100vw;">28.07. 18:45</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twqvyt1447597939.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Heart of Midlothian</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492399" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492399" style="text-align: center;"><span id="matchResultHomeScore-2492399">0</span> - <span id="matchResultAwayScore-2492399">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492399/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2492400" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2492400" style="word-spacing: 100vw;">29.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/fk1fam1767928408.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Górnik Zabrze</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2492400" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2492400" style="text-align: center;"><span id="matchResultHomeScore-2492400">1</span> - <span id="matchResultAwayScore-2492400">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2492400/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532706" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532706" style="word-spacing: 100vw;">29.07. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/pg8k1v1615586095.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Larne FC</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532706" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_3.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532706" style="text-align: center;"><span id="matchResultHomeScore-2532706">5</span> - <span id="matchResultAwayScore-2532706">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532706/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2532708" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2532708" style="word-spacing: 100vw;">29.07. 18:15</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ifxpmk1615900731.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FC Iberia 1999 Tiflis</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2532708" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2532708" style="text-align: center;"><span id="matchResultHomeScore-2532708">1</span> - <span id="matchResultAwayScore-2532708">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2532708/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552936" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552936" style="word-spacing: 100vw;">04.08. 16:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Mjällby AIF</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552936" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552936" style="text-align: center;"><span id="matchResultHomeScore-2552936">1</span> - <span id="matchResultAwayScore-2552936">2</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552936/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552932" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552932" style="word-spacing: 100vw;">04.08. 17:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Hapoel Be’er Scheva</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552932" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552932" style="text-align: center;"><span id="matchResultHomeScore-2552932">1</span> - <span id="matchResultAwayScore-2552932">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552932/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544172" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544172" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sparta Prag</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympique Lyon</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544172" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544172" style="text-align: center;"><span id="matchResultHomeScore-2544172">2</span> - <span id="matchResultAwayScore-2544172">1</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544172/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552934" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552934" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Kauno Žalgiris</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552934" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_3.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552934" style="text-align: center;"><span id="matchResultHomeScore-2552934">5</span> - <span id="matchResultAwayScore-2552934">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552934/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544171" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544171" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympiakos Piräus</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">NEC Nijmegen</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544171" style="
+																				
+																					color: #fff; background-color: #e9000099;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544171" style="text-align: center;"><span id="matchResultHomeScore-2544171">0</span> - <span id="matchResultAwayScore-2544171">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544171/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544173" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544173" style="word-spacing: 100vw;">04.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">St. Gilloise</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FK Bodø/Glimt</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544173" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544173" style="text-align: center;"><span id="matchResultHomeScore-2544173">3</span> - <span id="matchResultAwayScore-2544173">3</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544173/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552933" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552933" style="word-spacing: 100vw;">05.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552933" style="
+																				
+																					color: #fff; background-color: #00af0a8f;
+																				
+																				padding: 0px 4px; border-radius: 7px;">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACeA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552933" style="text-align: center;"><span id="matchResultHomeScore-2552933">2</span> - <span id="matchResultAwayScore-2552933">0</span></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552933/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544175" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544175" style="word-spacing: 100vw;">11.08. 16:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/uqpwwx1449165943.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">FK Bodø/Glimt</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ljszp41654601742.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">St. Gilloise</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544175">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544175" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544175/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552941" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552941" style="word-spacing: 100vw;">11.08. 17:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/yf8m3t1714153414.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Kauno Žalgiris</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/araidi1579955395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Dinamo Zagreb</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552941">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552941" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552941/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544176" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544176" style="word-spacing: 100vw;">11.08. 17:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/t5qjle1701019868.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">NEC Nijmegen</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/xckasq1721291508.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympiakos Piräus</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544176">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544176" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544176/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552937" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552937" style="word-spacing: 100vw;">11.08. 18:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/gz650v1567023440.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Roter Stern Belgrad</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/978vgx1579019997.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Hapoel Be’er Scheva</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552937">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_2.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552937" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552937/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552939" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552939" style="word-spacing: 100vw;">11.08. 18:15</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/i8t4xx1520797048.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Slovan Bratislava</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ruwqxv1430239112.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Mjällby AIF</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552939">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552939" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552939/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2552938" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2552938" style="word-spacing: 100vw;">11.08. 18:30</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/ppg0j71578585847.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sturm Graz</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/twxxvs1448199691.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Fenerbahçe Istanbul</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2552938">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAAB+A="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2552938" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2552938/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2544174" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2544174" style="word-spacing: 100vw;">11.08. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/blk9771656932845.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Olympique Lyon</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/j00qct1718287150.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Sparta Prag</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2544174">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2544174" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2544174/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2558133" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2558133" style="word-spacing: 100vw;">19.08. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Celtic Glasgow</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">LASK</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2558133">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAABuA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_1.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2558133" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2558133/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+<tr class="tr-body hoverable accordion-toggle" data-bs-target="#demo_2558134" data-bs-toggle="collapse">
+<td class="first-td align-middle matches-time-column">
+<span id="matchTime-2558134" style="word-spacing: 100vw;">25.08. 19:00</span>
+</td>
+<td class="inner-td align-middle">
+<span>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/oox26l1683556395.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">LASK</div>
+</div>
+<div id="container" style="white-space:nowrap;display: flex;align-items: center;">
+<div id="image" style="display:contents;">
+<img alt="" height="auto" id="club_image-matches" loading="lazy" src="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" width="100%"/>
+<!-- <img class="lazy" id="club_image-matches" src="/static/website/images/teamIcon_Placeholder.webp" data-original="https://r2.thesportsdb.com/images/media/team/badge/3uv1641758780002.png" alt=""> -->
+</div>
+<div id="teamname" style="display:inline;white-space:nowrap;padding-left: 0.5rem;">Celtic Glasgow</div>
+</div>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<span id="predResult_2558134">
+<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span> - 
+																			<span class="of-meta" meta-info="//4yADAAMgA2ADAAOAAxADAACOA="></span>
+</span>
+</td>
+<td class="inner-td align-middle text-center">
+<img alt="" class="predWeight-Image" src="/static/website/images/weight_0.webp"/>
+</td>
+<td class="inner-td align-middle text-center">
+<div id="matchResult-2558134" style="text-align: center;"></div>
+</td>
+<td class="last-td align-middle text-center">
+<a href="/de/football/match/2558134/"><i class="fa-solid fa-up-right-from-square"></i></a>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- <div class="col-xl-3 extraColForBigScreens" style="padding-top: 8rem;"></div> -->
+<!-- <div class="col-12 col-lg-3 mb-30">
+						<section>
+							<h2 class="major h2Customize"><span>Customize</span></h2>
+							<ul class="divided">
+								<li>
+									<article class="box post-summary">
+										<h5>Form</h5>
+										<input type="range" min="1" max="10" value="2.2" step="0.2" class="slider" id="formFactor">
+										<p>Faktor: <span id="formFactor_value"></span></p>
+										<h5>Form - Heim/Auswärts</h5>
+										<input type="range" min="0" max="10" value="0.4" step="0.2" class="slider" id="formHomeAwayFactor">
+										<p>Faktor: <span id="formHomeAwayFactor_value"></span></p>
+										<h5>Quoten</h5>
+										
+										<input type="range" min="1" max="15" value="2.5" step="0.5" class="slider" id="oddsFactor">
+										
+										<p>Faktor: <span id="oddsFactor_value"></span></p>
+										<h5>Heimvorteil</h5>
+										<input type="range" min="0" max="30" value="3" step="1" class="slider" id="homeAdvantage">
+										<p>Faktor: <span id="homeAdvantage_value"></span></p>
+										<hr>
+										<button class="button" id="defaultSettingsButton">Reset</button>
+									</article>
+								</li>
+							</ul>
+						</section>
+					</div> -->
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 extraColForBigScreens">
+<!-- Predicd | Vertik. | League | Sidebar -->
+<ins class="adsbygoogle" data-ad-client="ca-pub-4240094275012650" data-ad-format="auto" data-ad-slot="4399663982" data-full-width-responsive="true" style="display:block"></ins>
+</div>
+</div>
+<!-- Site footer -->
+<footer class="site-footer card-box">
+<div class="container">
+<div class="row">
+<div class="col-12 col-md-6">
+<h6>Worum geht's hier?</h6>
+<p class="text-justify footerColText">
+
+Hier findest du die neuesten Vorhersagen und Prognosen für die Champions League. Erhalte die besten Vorhersagen für die kommenden Spiele sowie die aktuellen Ergebnisse und Spielpläne. Unsere Vorhersagen basieren auf einem hochentwickelten KI-Modell, das genauere Analysen bietet und dich stets auf dem neuesten Stand hält.
+
+</p>
+</div>
+<div class="col-6 col-md-3" style="display: flex;justify-content: center;">
+<div>
+<h6>Links</h6>
+<ul class="footer-links footerColText">
+<!-- <li><a href="/de/football/">Home</a></li> -->
+<li><a href="/de/contact/">Kontakt</a></li>
+<li><a href="/de/legal-notice/">Impressum</a></li>
+<li><a href="/de/predicd-api/">API</a></li>
+<li><a href="/de/faq/">FAQ</a></li>
+<li><a href="/de/privacy/">Datenschutz</a></li>
+</ul>
+</div>
+</div>
+<div class="col-6 col-md-3" style="display: flex;justify-content: center;">
+<div>
+<h6>Partner</h6>
+<ul class="footer-links footerColText">
+<li><a href="https://github.com/dropways" target="_blank">Design: dropways</a></li>
+<li><a href="/de/partners/">Empfehlungen</a></li>
+</ul>
+</div>
+</div>
+</div>
+<hr/>
+</div>
+<div class="container" style="margin-top: -1.5rem;">
+<div class="row">
+<div class="col-md-8 col-sm-6 col-xs-12">
+<p class="copyright-text">Predicd © 2026
+					  </p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<!-- JavaScript -->
+<!-- predicd-core-v1 -->
+</body>
+</html>

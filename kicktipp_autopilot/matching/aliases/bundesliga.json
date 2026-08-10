@@ -1,0 +1,6 @@
+{
+  "_kommentar": "Aliasse predicd-Name -> Kicktipp-Name. Nur Faelle eintragen, die die Normalisierung NICHT loest (siehe matching/normalize.py). Beispiel: 'TSG Hoffenheim' und '1899 Hoffenheim' normalisieren beide zu 'hoffenheim' und brauchen daher keinen Eintrag.",
+  "_herkunft": "Uebernommen aus NAME_MAP in BL-Tipp.py (Stand 17.02.2026), reduziert auf die tatsaechlich noetigen Eintraege.",
+
+  "Borussia M'Gladbach": "Bor. Mönchengladbach"
+}

@@ -1,0 +1,17 @@
+# Direkte Abhängigkeiten (gepinnt auf die getesteten Versionen)
+# Installation:  pip install -r requirements.txt
+
+# --- Kern (kicktipp_autopilot) ---
+httpx==0.28.1              # HTTP-Abruf; bringt Session-/Cookie-Handling mit
+beautifulsoup4==4.15.0     # HTML-Parsing (predicd)
+rich==15.0.0               # Tabellenausgabe für den Dry-Run
+questionary==2.1.1         # Menü hinter -i (zieht prompt_toolkit mit)
+python-dotenv==1.2.2       # .env laden
+
+# --- Kicktipp-Abgabe (noch browserbasiert) ---
+# Ein separater ChromeDriver-Download ist nicht nötig: Selenium bringt seit 4.6
+# den "Selenium Manager" mit, der den passenden Treiber automatisch lädt.
+selenium==4.46.0
+
+# --- Entwicklung ---
+pytest==9.1.1

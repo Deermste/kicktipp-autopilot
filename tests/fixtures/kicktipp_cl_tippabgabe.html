@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html data-jsdatepattern="d.m.Y" data-jstimepattern="H:i" lang="de">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="yes" name="mobile-web-app-capable"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <title>
+   bl-cl-gruppe - Tippabgabe Paddy | kicktipp
+  </title>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="dark light" name="color-scheme"/>
+  <script>
+   window.viewConfig = {"targeting":{"zone":"tippabgabeform","wettbewerb":["1","4"],"erfolg":[],"key":"targeting"},"werbung":{"werbefreiUser":false,"werbungAktiv":true,"attState":"notDetermined","platform":"web","cmp":true,"cmpCheckConsent":true,"cmpLanguage":"de","cmpAuthId":null,"key":"werbung"},"adslot":{"sponsoring":false,"topmobile2":false,"key":"adslot"}}
+  </script>
+  <meta content="Tippabgabe Paddy der Tipprunde bl-cl-gruppe bei kicktipp - kostenlose Tippspiele" name="description"/>
+  <link href="/assets/apple-touch-icon-qQdJS3Mv.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/assets/favicon-32x32-CWw0qL3I.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/assets/favicon-16x16-ComJsYXG.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/manifest.json" rel="manifest"/>
+  <link color="#c01c00" href="/assets/safari-pinned-tab-BtJnD-BD.svg" rel="mask-icon"/>
+  <link href="/assets/favicon-CJzxTxQz.ico" rel="shortcut icon"/>
+  <meta content="/browserconfig.xml" name="msapplication-config"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <script src="/assets/libs-DvoI4YFk.js" type="module">
+   &#160;
+  </script>
+  <link href="/assets/kicktipp-Cy7ILxGP.css" media="all" rel="stylesheet" type="text/css"/>
+  <script>
+   "use strict";function _typeof(t){return(_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}!function(){var t=function(){var t,e,o=[],n=window,r=n;for(;r;){try{if(r.frames.__tcfapiLocator){t=r;break}}catch(t){}if(r===n.top)break;r=r.parent}t||(!function t(){var e=n.document,o=!!n.frames.__tcfapiLocator;if(!o)if(e.body){var r=e.createElement("iframe");r.style.cssText="display:none",r.name="__tcfapiLocator",e.body.appendChild(r)}else setTimeout(t,5);return!o}(),n.__tcfapi=function(){for(var t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];if(!n.length)return o;"setGdprApplies"===n[0]?n.length>3&&2===parseInt(n[1],10)&&"boolean"==typeof n[3]&&(e=n[3],"function"==typeof n[2]&&n[2]("set",!0)):"ping"===n[0]?"function"==typeof n[2]&&n[2]({gdprApplies:e,cmpLoaded:!1,cmpStatus:"stub"}):o.push(n)},n.addEventListener("message",(function(t){var e="string"==typeof t.data,o={};if(e)try{o=JSON.parse(t.data)}catch(t){}else o=t.data;var n="object"===_typeof(o)&&null!==o?o.__tcfapiCall:null;n&&window.__tcfapi(n.command,n.version,(function(o,r){var a={__tcfapiReturn:{returnValue:o,success:r,callId:n.callId}};t&&t.source&&t.source.postMessage&&t.source.postMessage(e?JSON.stringify(a):a,"*")}),n.parameter)}),!1))};"undefined"!=typeof module?module.exports=t:t()}();
+  </script>
+  <script>
+   window._sp_queue = [ ];
+window._sp_ = {
+  config: {
+    accountId: 375,
+    baseEndpoint: 'https://cdn.privacy-mgmt.com',
+    consentLanguage: viewConfig.werbung.cmpLanguage,   
+    gdpr: { },
+    targetingParams: { 
+      werbefrei: !viewConfig.werbung.cmpCheckConsent
+    },
+    events: { 
+      onMessageChoiceSelect: function (message_type, choice_id, 
+            choice_type_id) {
+         console.log('choice_type_id: ' + choice_type_id);
+         if (choice_type_id === 11) {
+             window.attCheckConsent()
+         }
+       }
+    }
+  }
+}
+  </script>
+  <script async="" src="https://cdn.privacy-mgmt.com/unified/wrapperMessagingWithoutDetection.js">
+  </script>
+  <script>
+   const breakpoint = 1023
+  window.SDG = window.SDG || {};
+  window.SDG.cmd = window.SDG.cmd || [];
+  window.SDG.cmd.push(function() {
+      SDG.Publisher.setZone(viewConfig.targeting.zone)
+      SDG.Publisher.addKeyValues({ 
+          'wettbewerb': viewConfig.targeting.wettbewerb,
+          'achievment': viewConfig.targeting.erfolg,
+      })
+      if (viewConfig.werbung.platform === 'iosApp') {
+        if (SDG.Publisher.transmitAttStatus) {
+          SDG.Publisher.transmitAttStatus(viewConfig.werbung.attState)
+        }
+      }
+      if (window.innerWidth > breakpoint) {
+         SDG.Publisher.registerSlot('banner', 'adtag_banner').load()
+         SDG.Publisher.registerSlot('sky', 'adtag_sky').load()
+         SDG.Publisher.registerSlot('button', 'adtag_teaser').load()
+      } else {
+         SDG.Publisher
+              .registerSlot('stickyfooter', 'adtag_stickyfooter')
+              .configure({pinToBottom: true})
+              .load()
+         if (viewConfig.adslot.topmobile2) {
+           const topmobile2 = SDG.Publisher.registerSlot('topmobile2', 'adtag_topmobile2')
+          topmobile2.configure({
+  	    reserveSpace: true,
+	    lazyLoad: true
+          }).load()
+
+         }
+      }
+      if (viewConfig.adslot.sponsoring) {
+         let width = window.innerWidth > breakpoint ? 650 : 319
+         let height = window.innerWidth > breakpoint ? 70 : 50
+         SDG.Publisher.registerModularSlot(
+            'sponsoring', 
+            'adtag_sponsoring', 
+            width, height, [[width,height]], false
+         ).configure({reserveSpace: false}).load()
+      }
+      SDG.Publisher.finalizeSlots()
+  })
+  </script>
+  <script async="" fetchpriority="high" src="https://cdn.stroeerdigitalgroup.de/metatag/live/kicktipp/metaTag.min.js" type="text/javascript">
+  </script>
+  <meta \="" content="app-id=570703120, app-argument=https://www.kicktipp.de/bl-cl-gruppe/tippabgabe" name="apple-itunes-app"/>
+  <meta content="noindex,nofollow" name="robots"/>
+ </head>
+ <body class="kicktipp-mobil">
+  <div id="wbwrapper">
+   <div class="noprint" id="adtag_banner">
+   </div>
+   <div id="pagewrapper">
+    <div class="noprint" id="topbar">
+     <div id="topbar-icons">
+      <div class="icon" id="tippglocke-icon">
+       <div class="navtoggle">
+        <span class="digit1">
+         0
+        </span>
+       </div>
+       <nav class="right" id="tippglocke-menu">
+        <div class="level0">
+         <a href="/bl-cl-gruppe/profil/meinetipprunden">
+          Meine Tipprunden
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/bl-cl-gruppe/">
+          bl-cl-gruppe
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/zweite-gruppe/">
+          zweite-gruppe
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/dritte-gruppe/">
+          dritte-gruppe
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/meine-gruppe/">
+          Bundesliga Tippspiel
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/vierte-gruppe/">
+          vierte-gruppe
+         </a>
+        </div>
+        <div class="level0">
+         <a href="/bl-cl-gruppe/profil/">
+          tipper@example.com
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/bl-cl-gruppe/profil/">
+          Mein Profil
+         </a>
+        </div>
+        <div class="level1">
+         <a href="/bl-cl-gruppe/profil/logout">
+          Logout
+         </a>
+        </div>
+       </nav>
+      </div>
+     </div>
+     <div class="visible-small-inline-block" id="toggle">
+      <div id="togglewrapper">
+       <div class="kicktipp-icon-list2">
+       </div>
+       <img alt="kt" class="for-dark-background" height="50" src="/assets/logo-mobil-kurz-white-BY-mCkpn.png" width="35"/>
+      </div>
+     </div>
+     <div class="visible-medium-inline-block" id="logo">
+      <a href="/" id="logowrapper">
+       <img alt="kicktipp" class="for-dark-background" src="/assets/kicktipp-logo-white-320x120-BQUyz9q9.png"/>
+      </a>
+     </div>
+     <h1 class="visible-small-block" id="title">
+      <span class="line1">
+       bl-cl-gruppe
+      </span>
+      <span class="line2">
+       Tippabgabe Paddy
+      </span>
+     </h1>
+    </div>
+    <div class="flex-row" id="wrapper">
+     <div id="overlay">
+     </div>
+     <div class="navigation-wrapper">
+      <nav class="noprint" id="navigation">
+       <div class="menu level1 visible-small-block">
+        <a class="navback" href="/">
+         <i class="kicktipp-icon-arrow-left2">
+         </i>
+         <span>
+          kicktipp
+         </span>
+        </a>
+       </div>
+       <div class="level0">
+        <a href="/bl-cl-gruppe/">
+         bl-cl-gruppe
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/tippuebersicht">
+         Tippübersicht
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/gesamtuebersicht">
+         Gesamtübersicht
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/wunschergebnis?reset=true">
+         Wunschergebnis
+        </a>
+       </div>
+       <div class="active level1">
+        <a href="/bl-cl-gruppe/tippabgabe">
+         Tippabgabe
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/tippspielplan">
+         Spielplan
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/tabellen">
+         Tabelle
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/spielregeln">
+         Spielregeln
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/chatliste">
+         Chats
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/mitgliedwerden">
+         Mitglied werden
+        </a>
+       </div>
+       <div class="level1">
+        <a href="/bl-cl-gruppe/profil/">
+         Mein Profil
+        </a>
+       </div>
+       <div class="noprint" id="adtag_teaser">
+       </div>
+      </nav>
+     </div>
+     <div class="kicktipp-content" id="kicktipp-content">
+      <div class="visible-medium-block" id="pagetitle">
+       <div class="pagetitle">
+        Tippabgabe Paddy
+       </div>
+      </div>
+      <div class="pagecontent">
+       <style>
+        #tippabgabeSpiele.mitfragen, #tippabgabeFragen, #tippabgabeRennen {
+                width: 100%
+            }
+
+            form.formnew .formrow {
+                padding: 0 !important;
+            }
+
+            #tippabgabeSpiele thead, #tippabgabeFragen thead, #tippabgabeRennen thead {
+                display: none;
+            }
+
+            .tippabgabe-wrapper {
+                display: inline-block;
+            }
+
+            @media screen and (max-width: 1023px) {
+                .tippabgabe-wrapper {
+                    width: 100%;
+                }
+            }
+       </style>
+       <div class="noprint" id="adtag_sponsoring">
+       </div>
+       <div class="tippabgabe-wrapper">
+        <div class="spieltagsauswahl prevnextauswahl noprint">
+         <div class="tabs">
+          <div class="tab prevnext active-true">
+           <div class="prevnext">
+            <div class="prevnextTab">
+             <div class="prevnextPrev">
+              <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=24">
+               <span class="kicktipp-icon-arrow-left">
+               </span>
+              </a>
+             </div>
+             <div class="prevnextTitle">
+              <a>
+               8. Spieltag - CL
+              </a>
+             </div>
+             <div class="prevnextNext disabled">
+              <a>
+               <span class="kicktipp-icon-arrow-right disabled">
+               </span>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="tab bonus active-false">
+           <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;bonus=true&amp;spieltagIndex=25">
+            Bonus
+           </a>
+          </div>
+         </div>
+         <div class="dropdownoverlay">
+          <div class="dropdowncontent">
+           <div class="menu">
+            <div class="level0 active-false bonusoption">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;bonus=true&amp;spieltagIndex=25">
+              Bonus
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=1">
+              1. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=2">
+              2. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=3">
+              3. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=4">
+              1. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=5">
+              4. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=6">
+              5. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=7">
+              2. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=8">
+              6. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=9">
+              7. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=10">
+              3. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=11">
+              8. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=12">
+              9. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=13">
+              4. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=14">
+              10. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=15">
+              11. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=16">
+              5. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=17">
+              12. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=18">
+              13. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=19">
+              6. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=20">
+              14. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=21">
+              15. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=22">
+              16. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=23">
+              17. Spieltag
+             </a>
+            </div>
+            <div class="level0 active-false">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=24">
+              7. Spieltag - CL
+             </a>
+            </div>
+            <div class="level0 active-true">
+             <a href="/bl-cl-gruppe/tippabgabe?tippsaisonId=8888888&amp;spieltagIndex=25">
+              8. Spieltag - CL
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <img alt="Advertisement" attributionsrc="" border="0" height="1" src="https://ad.doubleclick.net/ddm/trackimp/N8807.5727865DESPORTSWELCOMEBONU/B33837146.426322164;dc_trk_aid=618833928;dc_trk_cid=239298984;ord=1786358205786;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=;gdpr_consent=;ltd=;dc_tdv=1?" width="1"/>
+        <img src="https://tracking.m6r.eu/pixel/pixel?pixelId=3fd4879d-b16c-41e3-ac3c-088bd0826861" style="display:none"/>
+        <div class="wettbanner wettbanner-bwin">
+         <a class="wettbanner-link" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/fußball-4/wetten/europa-7/champions-league-0:3?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696" target="_blank">
+          <div class="wettbanner-wrapper bwin">
+           <div class="wettbanner-left">
+            <div class="wettbanner-text">
+             <div class="wettbanner-hinweis">
+              Quoten zur Info für Deine Tipps
+             </div>
+            </div>
+            <div class="wettbanner-sucht">
+             <span class="oddset-suchthinweis-big">
+              lizenzierter Sportwettanbieter (Whitelist) | 18+ | Suchtgefahr buwei.de | -w-
+             </span>
+             <span class="oddset-suchthinweis-small">
+              lizenziert | 18+ | Suchtgefahr buwei.de
+              <span class="zusatz">
+               | -w-
+              </span>
+             </span>
+            </div>
+           </div>
+           <div class="wettbanner-right">
+            <img src="/assets/bwin-240x130-ZQIh_rdN.png"/>
+           </div>
+          </div>
+         </a>
+        </div>
+        <form accept-charset="UTF-8" action="/bl-cl-gruppe/tippabgabe" autocomplete="off" class="formnew fullwidth" id="tippabgabeForm" method="post">
+         <div class="formwrapper">
+          <input id="mitgliedIdHidden" name="tipperId" type="hidden" value="11111111"/>
+          <input name="spieltagIndex" type="hidden" value="25"/>
+          <input name="bonus" type="hidden" value="false"/>
+          <input name="tippsaisonId" type="hidden" value="8888888"/>
+          <table id="tippabgabeSpiele">
+           <thead>
+            <tr class="label">
+             <th name="tipptermin">
+              Tipptermin
+             </th>
+             <th name="heim">
+             </th>
+             <th name="gast">
+             </th>
+             <th name="tipp">
+             </th>
+             <th class="kicktipp-quote" name="quote">
+             </th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td class="nw kicktipp-time">
+              29.01.25 20:55
+             </td>
+             <td class="nw">
+              Sporting Lissabon
+             </td>
+             <td class="nw">
+              FC Bologna
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000001_tippAbgegeben" name="spieltippForms[2600000001].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000001_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000001].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000001_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000001].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542121?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542121-175230997-608451490&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.87
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542121?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542121-175230997-608451491&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 3.50
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542121?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542121-175230997-608451492&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 4.20
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              FC Girona
+             </td>
+             <td class="nw">
+              FC Arsenal
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000002_tippAbgegeben" name="spieltippForms[2600000002].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000002_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000002].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000002_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000002].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542120?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542120-175231209-608452956&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 6.00
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542120?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542120-175231209-608452957&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 4.10
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542120?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542120-175231209-608452958&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 1.55
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Juventus Turin
+             </td>
+             <td class="nw">
+              Benfica Lissabon
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000003_tippAbgegeben" name="spieltippForms[2600000003].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000003_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000003].heimTipp" size="2" type="text" value="1"/>
+              <input autocomplete="off" id="spieltippForms_2600000003_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000003].gastTipp" size="2" type="text" value="1"/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542129?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542129-175231722-608456476&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 2.25
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542129?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542129-175231722-608456477&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 3.20
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542129?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542129-175231722-608456478&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 3.30
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              VfB Stuttgart
+             </td>
+             <td class="nw">
+              Paris St. Germain
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000004_tippAbgegeben" name="spieltippForms[2600000004].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000004_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000004].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000004_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000004].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542124?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542124-175231484-608454678&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 3.70
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542124?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542124-175231484-608454679&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 2.60
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542124?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542124-175231484-608454680&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 2.35
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Young Boys Bern
+             </td>
+             <td class="nw">
+              Roter Stern Belgrad
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000005_tippAbgegeben" name="spieltippForms[2600000005].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000005_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000005].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000005_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000005].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542127?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542127-175231712-608456405&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 2.45
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542127?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542127-175231712-608456406&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 3.75
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542127?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542127-175231712-608456407&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 2.60
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              FC Red Bull Salzburg
+             </td>
+             <td class="nw">
+              Atletico Madrid
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000006_tippAbgegeben" name="spieltippForms[2600000006].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000006_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000006].heimTipp" size="2" type="text" value="2"/>
+              <input autocomplete="off" id="spieltippForms_2600000006_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000006].gastTipp" size="2" type="text" value="0"/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542132?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542132-175232030-608458604&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 6.50
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542132?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542132-175232030-608458605&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 4.50
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542132?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542132-175232030-608458606&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 1.47
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              OSC Lille
+             </td>
+             <td class="nw">
+              Feyenoord Rotterdam
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000007_tippAbgegeben" name="spieltippForms[2600000007].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000007_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000007].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000007_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000007].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542139?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542139-175233073-608465902&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 2.30
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542139?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542139-175233073-608465903&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 3.60
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542139?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542139-175233073-608465904&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 2.90
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              FC Barcelona
+             </td>
+             <td class="nw">
+              Atalanta Bergamo
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000008_tippAbgegeben" name="spieltippForms[2600000008].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000008_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000008].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000008_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000008].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542128?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542128-175231970-608458351&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.65
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542128?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542128-175231970-608458352&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 4.40
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542128?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542128-175231970-608458353&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 4.50
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Borussia Dortmund
+             </td>
+             <td class="nw">
+              Schachtjor Donezk
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000009_tippAbgegeben" name="spieltippForms[2600000009].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000009_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000009].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000009_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000009].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542131?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542131-175232290-608460552&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.36
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542131?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542131-175232290-608460553&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 5.50
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542131?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542131-175232290-608460554&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 7.25
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              SK Sturm Graz
+             </td>
+             <td class="nw">
+              RB Leipzig
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000010_tippAbgegeben" name="spieltippForms[2600000010].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000010_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000010].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000010_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000010].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542133?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542133-175232350-608460842&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 3.90
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542133?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542133-175232350-608460843&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 3.75
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542133?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542133-175232350-608460844&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 1.87
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Inter Mailand
+             </td>
+             <td class="nw">
+              AS Monaco
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000011_tippAbgegeben" name="spieltippForms[2600000011].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000011_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000011].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000011_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000011].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542125?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542125-175231652-608456152&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.65
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542125?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542125-175231652-608456153&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 4.20
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542125?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542125-175231652-608456154&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 4.75
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Bayer 04 Leverkusen
+             </td>
+             <td class="nw">
+              Sparta Prag
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000012_tippAbgegeben" name="spieltippForms[2600000012].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000012_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000012].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000012_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000012].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542123?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542123-175231424-608454425&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.13
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542123?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542123-175231424-608454426&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 9.50
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542123?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542123-175231424-608454427&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 18.5
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Manchester City
+             </td>
+             <td class="nw">
+              FC Brügge
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000013_tippAbgegeben" name="spieltippForms[2600000013].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000013_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000013].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000013_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000013].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542138?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542138-175232721-608463567&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.25
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542138?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542138-175232721-608463568&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 6.75
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542138?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542138-175232721-608463569&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 9.75
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              PSV Eindhoven
+             </td>
+             <td class="nw">
+              FC Liverpool
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000014_tippAbgegeben" name="spieltippForms[2600000014].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000014_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000014].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000014_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000014].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542119?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542119-175231007-608451561&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 2.30
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542119?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542119-175231007-608451562&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 3.50
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542119?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542119-175231007-608451563&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 2.87
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Stade Brest 29
+             </td>
+             <td class="nw">
+              Real Madrid
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000015_tippAbgegeben" name="spieltippForms[2600000015].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000015_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000015].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000015_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000015].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542130?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542130-175232050-608458708&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 6.50
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542130?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542130-175232050-608458709&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 5.25
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542130?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542130-175232050-608458710&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 1.41
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Dinamo Zagreb
+             </td>
+             <td class="nw">
+              AC Mailand
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000016_tippAbgegeben" name="spieltippForms[2600000016].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000016_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000016].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000016_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000016].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542136?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542136-175232391-608461005&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 5.50
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542136?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542136-175232391-608461006&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 4.60
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542136?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542136-175232391-608461007&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 1.52
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              FC Bayern München
+             </td>
+             <td class="nw">
+              SK Slovan Bratislava
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000017_tippAbgegeben" name="spieltippForms[2600000017].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000017_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000017].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000017_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000017].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542122?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542122-175231269-608453209&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.02
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542122?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542122-175231269-608453210&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 21.0
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542122?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542122-175231269-608453211&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 36.0
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+            <tr>
+             <td class="nw kicktipp-time">
+             </td>
+             <td class="nw">
+              Aston Villa
+             </td>
+             <td class="nw">
+              Celtic Glasgow
+             </td>
+             <td class="kicktipp-tippabgabe">
+              <input id="spieltippForms_2600000018_tippAbgegeben" name="spieltippForms[2600000018].tippAbgegeben" type="hidden" value="true"/>
+              <input autocomplete="off" id="spieltippForms_2600000018_heimTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000018].heimTipp" size="2" type="text" value=""/>
+              <input autocomplete="off" id="spieltippForms_2600000018_gastTipp" inputmode="numeric" maxlength="3" name="spieltippForms[2600000018].gastTipp" size="2" type="text" value=""/>
+             </td>
+             <td class="nw quoten">
+              <div class="tippabgabe-quoten">
+               <a class="quote quoteheim" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542134?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542134-175232701-608463463&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 1
+                </span>
+                <span class="quote-text">
+                 1.53
+                </span>
+               </a>
+               <a class="quote quoteremis" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542134?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542134-175232701-608463464&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 X
+                </span>
+                <span class="quote-text">
+                 4.60
+                </span>
+               </a>
+               <a class="quote quotegast" href="https://ad.doubleclick.net/ddm/clk/641385188;447712363;q;gdpr=;gdpr_consent=?https://sports.bwin.de/de/sports/events/2:7542134?wm=5047009&amp;utm_medium=partner-partnerodds&amp;utm_source=kicktipp-odds&amp;utm_term=5047009-tipster_all-bwin-sprts-de-14-06-2022-de-dr-partner--partnerodds-kicktipp---acq-mble-c%3A56696&amp;options=2:7542134-175232701-608463465&amp;stake=10" tabindex="-1" target="_blank">
+                <span class="quote-label">
+                 2
+                </span>
+                <span class="quote-text">
+                 5.25
+                </span>
+               </a>
+              </div>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+          <button name="submitbutton" type="submit">
+          </button>
+         </div>
+        </form>
+        <div class="menu bordertop">
+         <div class="level0">
+          <a href="/bl-cl-gruppe/spielinfo?tippsaisonId=8888888&amp;tippspielId=1301833630">
+           Tippabgabe mit Spielinfos
+          </a>
+         </div>
+        </div>
+       </div>
+       <script src="/assets/tippuebersicht-tJmm664Z.js" type="module">
+        &#160;
+       </script>
+       <script>
+        let ktableSpiele, ktableFragen, ktableRennen
+
+          function callbackReflowRowheaderTipptermin(ktable, index) {
+            if (typeof ktable != 'undefined') {
+              ktable.doReflow(index)
+            }
+          }
+
+          window.addEventListener('DOMContentLoaded', function() {
+            $('#tippabgabeForm').enterAsTab()
+
+            const tabelleSpiele = $('#tippabgabeSpiele')
+            if (tabelleSpiele.length) {
+              ktableSpiele = tabelleSpiele.ktable().data('ktable')
+              ktableSpiele.rowheader(['tipptermin'],
+                {
+                  reflowCallback: function() {
+                    callbackReflowRowheaderTipptermin(ktableFragen, 0)
+                  }
+                })
+              ktableSpiele.stack(['heim', 'punkteregel'],
+                {
+                  prependTablehead: true
+                })
+              ktableSpiele.stack(['heim', 'quote'],
+                {
+                  prependTablehead: true,
+                  singleRow: true
+                })
+              ktableSpiele.stack(['heim', 'gast'])
+              ktableSpiele.shrink(['heim'])
+              ktableSpiele.overflow(['heim'])
+              ktableSpiele.prepare()
+            }
+            const tabelleRennen = $('#tippabgabeRennen')
+            if (tabelleRennen.length) {
+              ktableRennen = tabelleRennen.ktable().data('ktable')
+              ktableRennen.rowheader(['tipptermin'],
+                {
+                  reflowCallback: function() {
+                    callbackReflowRowheaderTipptermin(ktableSpiele, 0)
+                  }
+                })
+              ktableRennen.stack(['frage', 'punkteregel'],
+                {
+                  prependTablehead: true
+                })
+              ktableRennen.stack(['frage', 'tipp'])
+              ktableRennen.wrap(['frage'])
+              ktableRennen.prepare()
+            }
+
+            const tabelleFragen = $('#tippabgabeFragen')
+            if (tabelleFragen.length) {
+              ktableFragen = tabelleFragen.ktable().data('ktable')
+              ktableFragen.rowheader(['tipptermin'],
+                {
+                  reflowCallback: function() {
+                    callbackReflowRowheaderTipptermin(ktableSpiele, 0)
+                  }
+                })
+              ktableFragen.stack(['frage', 'punkteregel'],
+                {
+                  prependTablehead: true
+                })
+              ktableFragen.stack(['frage', 'tipp'])
+              ktableFragen.wrap(['frage'])
+              ktableFragen.prepare()
+            }
+            if (tabelleSpiele.length) {
+              ktableSpiele.reflow()
+            }
+            if (tabelleFragen.length) {
+              ktableFragen.reflow()
+            }
+            if (tabelleRennen.length) {
+              ktableRennen.reflow()
+            }
+          })
+       </script>
+      </div>
+      <div class="footer noprint">
+       <div class="footer-block noprint">
+        <div>
+         <a class="" href="/bl-cl-gruppe/profil/sprache">
+          <span style="text-transform: uppercase">
+           de
+          </span>
+         </a>
+        </div>
+        <div>
+         <a class="" href="/info/service/hilfe/">
+          Hilfe
+         </a>
+        </div>
+        <div>
+         <a class="" href="/info/service/app">
+          App
+         </a>
+        </div>
+        <div>
+         <a href="https://kicktipp.myspreadshop.de/">
+          Fanshop
+         </a>
+        </div>
+       </div>
+       <div class="footer-block noprint">
+        <div>
+         <a class="" href="/info/service/impressum">
+          Impressum
+         </a>
+        </div>
+        <div>
+         <a class="" href="/info/service/datenschutz/">
+          Datenschutz
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="footer-tail">
+    </div>
+    <script>
+     window.fehlendeTipps = 0;
+window.kurzname = "bl-cl-gruppe";
+function showSdkAd() { return false }
+function getSdkAdPhone() { return '' }
+function getSdkAdPhone100px() { return '' }
+function getSdkAdTablet() { return '' }
+function getDarkmode() { return "off" }
+function startUrl() { return "https://www.kicktipp.de/" }
+function KtAppleBadgeNummer() {	return fehlendeTipps }
+function isAppRequest() { return false }
+window.integrationsUrl = "";
+window.mobileDeviceTokenDTO = {
+    appRequest: false,
+	ableToInAppPurchase: false,
+	ios: false
+}
+if (typeof (Android) != 'undefined') {
+	if (fehlendeTipps === 0) {
+		Android.cancelNotification("12321");
+	}
+}
+    </script>
+    <script src="/assets/darkmode-BrQ3YIIE.js" type="module">
+     &#160;
+    </script>
+    <script src="/assets/mobil-BytaMXhd.js" type="module">
+     &#160;
+    </script>
+   </div>
+   <div class="noprint" id="adtag_sky">
+   </div>
+   <div class="noprint" id="adtag_stickyfooter">
+   </div>
+  </div>
+ </body>
+</html>

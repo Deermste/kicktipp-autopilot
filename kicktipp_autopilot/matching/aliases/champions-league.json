@@ -1,0 +1,6 @@
+{
+  "_kommentar": "Aliasse predicd-Name -> Kicktipp-Name. Nur Faelle eintragen, die die Normalisierung NICHT loest (siehe matching/normalize.py).",
+  "_stand": "10.08.2026. Von den 36 Teams der CL-Ligaphase liessen sich 11 gegen vorliegende predicd-Daten pruefen; alle 11 loest die Normalisierung ohne Alias, auch die abweichenden Schreibweisen 'Bayer Leverkusen'/'Bayer 04 Leverkusen', 'Sturm Graz'/'SK Sturm Graz' und 'Slovan Bratislava'/'SK Slovan Bratislava'. Deshalb ist die Datei leer.",
+  "_offen": "Die uebrigen 25 Teams sind noch nicht pruefbar: predicd zeigt derzeit nur die Qualifikationsrunden, deren Teilnehmer sich kaum mit der Ligaphase ueberschneiden. Sobald die Ligaphase dort steht, mit 'kicktipp --league champions-league --no-kicktipp' die Namen sichten und fehlende Faelle hier ergaenzen.",
+  "_sicherheitsnetz": "Ein fehlender Alias kann keinen falschen Tipp verursachen: Nicht zuordenbare Spiele blockieren die Abgabe (siehe --allow-partial) und werden namentlich gemeldet."
+}

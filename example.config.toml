@@ -1,0 +1,35 @@
+# Welche Wettbewerbe eine Tippgruppe tippt.
+#
+#   cp example.config.toml config.toml
+#
+# Diese Datei ist optional. Wer nur Bundesliga tippt, braucht sie nie: Ohne sie
+# gilt die Liga aus --league, ansonsten Bundesliga. Gebraucht wird sie, sobald
+# eine Gruppe mehrere Wettbewerbe abdeckt.
+#
+# Genau diese Einträge arbeitet `kicktipp --all-groups` der Reihe nach ab, und
+# genau sie stehen im Menü von `kicktipp -i` zur Auswahl. Was hier fehlt, wird
+# nie automatisch getippt — auch dann nicht, wenn die Gruppe im Konto existiert.
+#
+# Hintergrund: Kicktipp zeigt je Spieltag genau einen Wettbewerb, verrät in den
+# Spielzeilen aber nicht, welchen. Der Autopilot lädt deshalb die Vorhersagen
+# aller hier genannten Ligen und ordnet sie über die Paarungen zu. Welcher
+# Wettbewerb gerade dran ist, ergibt sich daraus, was gepasst hat.
+#
+# Zugangsdaten gehören NICHT hierher, sondern in die .env.
+
+[[gruppen]]
+# "name" ist der Teil aus der URL: kicktipp.de/DEIN-GRUPPENNAME/tippabgabe
+# Die eigenen Gruppen anzeigen:  kicktipp --list-groups
+name  = "bl-cl-1"
+ligen = ["bundesliga", "champions-league"]
+
+[[gruppen]]
+name  = "bundesliga-tippspiel"
+ligen = ["bundesliga"]
+
+# Bekannte Liganamen anzeigen:  kicktipp --list-leagues
+# Statt eines Namens geht auch direkt eine numerische predicd-ID.
+#
+# [[gruppen]]
+# name  = "pokal-runde"
+# ligen = ["bundesliga", "dfb-pokal"]

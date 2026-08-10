@@ -42,7 +42,7 @@ load_dotenv()
 
 KICKTIPP_EMAIL = os.getenv("KICKTIPP_EMAIL")
 KICKTIPP_PASSWORD = os.getenv("KICKTIPP_PASSWORD")
-KICKTIPP_GROUP = os.getenv("KICKTIPP_GROUP", "sfsdfvsd")
+KICKTIPP_GROUP = os.getenv("KICKTIPP_GROUP")
 
 PREDICD_URL = "https://www.predicd.com/de/football/league/4331/"
 KICKTIPP_URL = f"https://www.kicktipp.de/{KICKTIPP_GROUP}/tippabgabe"
@@ -251,6 +251,13 @@ def submit_to_kicktipp(
         log.error(
             "Zugangsdaten fehlen! Bitte KICKTIPP_EMAIL und KICKTIPP_PASSWORD "
             "in der .env-Datei setzen."
+        )
+        return False
+
+    if not KICKTIPP_GROUP:
+        log.error(
+            "Gruppenname fehlt! Bitte KICKTIPP_GROUP in der .env-Datei setzen "
+            "(der Teil aus der URL: kicktipp.de/DEIN-GRUPPENNAME/tippabgabe)."
         )
         return False
 

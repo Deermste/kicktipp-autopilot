@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Starter für den Kicktipp Autopiloten.
+#
+# Übernimmt das Wechseln ins Projektverzeichnis und das Aktivieren der
+# virtuellen Umgebung, sodass der Aufruf von überall aus funktioniert:
+#
+#     kicktipp                        # Vorschau der Gruppe aus der .env
+#     kicktipp --submit               # eintragen und speichern
+#     kicktipp --all-groups --submit  # alle Gruppen aus der config.toml
+#     kicktipp -i                     # Gruppen im Menü auswählen
+#
+set -euo pipefail
+
+# Echten Pfad auflösen — funktioniert auch, wenn der Aufruf über einen
+# Symlink in ~/.local/bin erfolgt.
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+PROJECT_DIR="$(dirname "$SCRIPT_PATH")"
+PYTHON="$PROJECT_DIR/.venv/bin/python"
+
+if [ ! -x "$PYTHON" ]; then
+    echo "Fehler: Virtuelle Umgebung nicht gefunden unter $PYTHON" >&2
+    echo >&2
+    echo "Einmalig anlegen mit:" >&2
+    echo "  cd \"$PROJECT_DIR\"" >&2
+    echo "  python3 -m venv .venv" >&2
+    echo "  .venv/bin/pip install -r requirements.txt" >&2
+    exit 1
+fi
+
+cd "$PROJECT_DIR"
+exec "$PYTHON" -m kicktipp_autopilot "$@"
