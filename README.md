@@ -78,8 +78,8 @@ sudo apt install -y /tmp/chrome.deb
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/TrustPaddy/Kicktipp-Autopilot.git
-   cd Kicktipp-Autopilot
+   git clone https://github.com/TrustPaddy/kicktipp-autopilot.git
+   cd kicktipp-autopilot
    ```
 
 2. **Create a virtual environment and install dependencies**
