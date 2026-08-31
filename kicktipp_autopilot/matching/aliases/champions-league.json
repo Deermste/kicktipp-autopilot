@@ -1,6 +1,14 @@
 {
-  "_kommentar": "Aliasse predicd-Name -> Kicktipp-Name. Nur Faelle eintragen, die die Normalisierung NICHT loest (siehe matching/normalize.py).",
-  "_stand": "10.08.2026. Von den 36 Teams der CL-Ligaphase liessen sich 11 gegen vorliegende predicd-Daten pruefen; alle 11 loest die Normalisierung ohne Alias, auch die abweichenden Schreibweisen 'Bayer Leverkusen'/'Bayer 04 Leverkusen', 'Sturm Graz'/'SK Sturm Graz' und 'Slovan Bratislava'/'SK Slovan Bratislava'. Deshalb ist die Datei leer.",
-  "_offen": "Die uebrigen 25 Teams sind noch nicht pruefbar: predicd zeigt derzeit nur die Qualifikationsrunden, deren Teilnehmer sich kaum mit der Ligaphase ueberschneiden. Sobald die Ligaphase dort steht, mit 'kicktipp --league champions-league --no-kicktipp' die Namen sichten und fehlende Faelle hier ergaenzen.",
-  "_sicherheitsnetz": "Ein fehlender Alias kann keinen falschen Tipp verursachen: Nicht zuordenbare Spiele blockieren die Abgabe (siehe --allow-partial) und werden namentlich gemeldet."
+  "_kommentar": "Aliasse predicd-Name -> Kicktipp-Name. Nur Faelle eintragen, die die Normalisierung NICHT loest (siehe matching/normalize.py). Abweichende Schreibweisen wie 'Bayer Leverkusen'/'Bayer 04 Leverkusen', 'Sturm Graz'/'SK Sturm Graz', 'Atlético Madrid'/'Atletico Madrid' oder 'FK Bodø/Glimt'/'FK Bodö/Glimt' brauchen keinen Eintrag.",
+  "_stand": "31.08.2026. Alle 36 Teams der CL-Ligaphase gegen den 1. Spieltag beider Seiten geprueft (predicd-Ligaseite 4480 gegen die Kicktipp-Tippabgabe). 31 davon loest die Normalisierung ohne Alias; die 5 verbleibenden stehen unten. Weil am 1. Spieltag jedes Team der Ligaphase genau einmal antritt, ist die Ligaphase damit vollstaendig abgedeckt. Abgesichert durch tests/test_echte_paarungen_cl.py.",
+  "_sicherheitsnetz": "Ein fehlender Alias kann keinen falschen Tipp verursachen: Nicht zuordenbare Spiele blockieren die Abgabe (siehe --allow-partial) und werden namentlich gemeldet.",
+
+  "_blockierten_die_abgabe": "Zu unaehnlich fuer die Aehnlichkeitssuche — ohne diese drei Eintraege blieb der 1. Spieltag ungetippt.",
+  "LASK": "Linzer ASK",
+  "Como 1907": "Como Calcio",
+  "Betis Sevilla": "Real Betis Sevilla",
+
+  "_liefen_nur_unscharf": "Wurden mit 91% noch erkannt, aber geraten wird hier nicht gerne: als Alias sind sie exakt.",
+  "Paris Saint-Germain": "Paris St. Germain",
+  "Schachtar Donezk": "Schachtjor Donezk"
 }
