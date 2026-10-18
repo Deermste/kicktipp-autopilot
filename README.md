@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
 - **Fixture-based matching** — Pairs games by home *and* away team, so it works even when the matchday label is missing (`Finale`, `Achtelfinale`, …)
 - **Smart team name mapping** — Normalisation handles most spelling differences (*TSG Hoffenheim* ↔ *1899 Hoffenheim*); per-league alias files cover the rest
 - **Never guesses** — Anything it cannot match confidently is reported by name and skipped, including Kicktipp bonus questions
-- **Protects manual tips** — Existing tips are left untouched unless you pass `--overwrite`
+- **Protects manual tips** — Existing tips are left untouched unless you pass `--overwrite` or set `ueberschreiben = true` for the group
 - **Group discovery** — `--list-groups` reads your leagues straight from your account
 - **Several competitions per group** — A group playing Bundesliga *and* Champions League is handled from one `config.toml` entry
 - **All your groups in one go** — `--all-groups` works through every group in `config.toml` on a single login, with a summary at the end
@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
 - **Stops instead of half-tipping** — If any game on the page has no clear prediction, nothing is submitted at all
 - **Optional tip strategies** — Uses the bookmaker odds Kicktipp shows next to each game to pick better scores (`faustregel`) and to side with the favourite (`favorit`); off unless you switch it on
 - **Knows when it is too early** — Rounds that Kicktipp has not drawn yet are named as such, not blamed on your config
-- **Offline tests** — 271 tests run against saved HTML, catching layout changes before they cost you points
+- **Offline tests** — 279 tests run against saved HTML, catching layout changes before they cost you points
 
 ---
 
@@ -201,7 +201,7 @@ python -m kicktipp_autopilot --no-kicktipp
 | Option | Effect |
 |---|---|
 | `--submit` | Actually enter and send the tips (otherwise: dry run) |
-| `--overwrite` | Also replace tips you already submitted (default: leave them alone) |
+| `--overwrite` / `--no-overwrite` | Replace tips you already submitted, or protect them for this run. Without either, `ueberschreiben` from `config.toml` decides; default: leave them alone |
 | `--strategie NAME` | Tip strategy: `favorit`, `faustregel`, both (`favorit,faustregel`) or `keine`. Overrides `strategie` in `config.toml` for every group of the run |
 | `--group NAME` | Kicktipp group, overrides `.env` |
 | `--all-groups` | Work through every group in `config.toml` on one login |
@@ -257,6 +257,25 @@ BL+CL group can still have empty CL odds while a pure CL group already has
 them. During `--all-groups` a group without odds reuses those of an earlier
 group in the same run (same pairing, same kick-off). So put mixed groups last
 in `config.toml`.
+
+### Overwriting by default
+
+By default a tip that is already on Kicktipp is never touched. That protects
+tips you entered by hand. It also means a matchday the bot tipped days ago
+keeps the old prediction, even when predicd or the odds have moved since. To
+let the bot re-tip a group on every run:
+
+```toml
+[[gruppen]]
+name           = "bundesliga-tippspiel"
+ligen          = ["bundesliga"]
+ueberschreiben = true
+```
+
+Games that have already kicked off have no input fields any more and are
+never changed. `--no-overwrite` protects existing tips for a single run, for
+example after tipping one game by hand. `--overwrite` does the opposite for
+groups without the setting.
 
 ### `--matchday` is the group's index, not the number on screen
 
@@ -437,11 +456,12 @@ Kicktipp-Autopilot/
 │       ├── kicktipp_parse.py # HTML -> objects (shared, offline-testable)
 │       ├── kicktipp_http.py  # Default transport: plain HTTP
 │       └── kicktipp.py       # Fallback transport: Selenium
-├── tests/                # 271 tests, run fully offline
+├── tests/                # 279 tests, run fully offline
 │   ├── test_mehrere_ligen.py  # Groups with several competitions
 │   ├── test_alle_gruppen.py   # --all-groups: loop, isolation, summary
 │   ├── test_interaktiv.py     # The menu, with questionary stubbed out
 │   ├── test_strategy.py       # Tip strategies, from odds to the verified submit
+│   ├── test_ueberschreiben.py # ueberschreiben in config.toml vs. --(no-)overwrite
 │   └── fixtures/         # Saved HTML pages (anonymised)
 ├── kicktipp              # Launcher script (symlinked into ~/.local/bin)
 ├── BL-Tipp.py            # Original single-file version (fallback)

@@ -60,6 +60,7 @@ def single_group(credentials: Credentials, cli_leagues: list[str] | None) -> lis
             name=credentials.group,
             leagues=leagues_for(credentials.group, cli_leagues, groups=groups),
             strategies=entry.strategies if entry else (),
+            overwrite=entry.overwrite if entry else False,
         )
     ]
 
@@ -200,8 +201,13 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
-        "--overwrite", action="store_true",
-        help="Auch bereits abgegebene Tipps überschreiben (Standard: unangetastet lassen).",
+        "--overwrite", action=argparse.BooleanOptionalAction, default=None,
+        help=(
+            "Auch bereits abgegebene Tipps überschreiben. Ohne Angabe gilt "
+            "'ueberschreiben' aus config.toml, sonst bleiben sie unangetastet. "
+            "--no-overwrite schützt sie auch dann, wenn die config.toml "
+            "überschreiben würde."
+        ),
     )
     parser.add_argument(
         "--no-kicktipp", action="store_true",

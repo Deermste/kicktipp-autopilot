@@ -263,7 +263,7 @@ def run_groups(
     runs: list[GroupConfig],
     matchday: int | None = None,
     submit: bool = False,
-    overwrite: bool = False,
+    overwrite: bool | None = None,
     use_browser: bool = False,
     headless: bool = True,
     allow_partial: bool = False,
@@ -280,6 +280,10 @@ def run_groups(
     Vorschau und danach die Abgabe fährt: Beides läuft dann über dieselbe
     angemeldete Sitzung und denselben Vorhersage-Cache — abgesendet wird
     garantiert das, was in der Vorschau stand.
+
+    `overwrite` gilt für alle Gruppen, wenn gesetzt (`--overwrite` bzw.
+    `--no-overwrite`); bei None entscheidet je Gruppe `ueberschreiben` aus
+    der config.toml.
 
     `require_fixtures` entscheidet, ob eine Gruppe ohne offenen Spieltag ein
     Fehler ist. Standard ist „ja, wenn genau eine Gruppe genannt wurde": Dort
@@ -337,7 +341,7 @@ def run_groups(
                     predictions,
                     matchday=matchday,
                     submit=submit,
-                    overwrite=overwrite,
+                    overwrite=run.overwrite if overwrite is None else overwrite,
                     allow_partial=allow_partial,
                     require_fixtures=require_fixtures,
                     odds_seen=quoten,

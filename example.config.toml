@@ -30,6 +30,9 @@ ligen = ["bundesliga"]
 #   favorit    = Buchmacher-Favorit statt abweichender predicd-Tendenz
 #   faustregel = 3:0 bei klarem Favoriten (≥ 65 %), sonst 2:1, Remis 1:1
 # strategie = ["favorit", "faustregel"]
+# Optional: bereits abgegebene Tipps bei jedem Lauf neu setzen (wie --overwrite).
+# Von Hand getippte Spiele gehen dabei verloren; schützen mit --no-overwrite.
+# ueberschreiben = true
 
 # Bekannte Liganamen anzeigen:  kicktipp --list-leagues
 # Statt eines Namens geht auch direkt eine numerische predicd-ID.

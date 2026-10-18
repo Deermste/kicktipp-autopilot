@@ -174,6 +174,9 @@ class GroupConfig:
     #  Tippstrategien aus `strategy.py`, z. B. ("favorit", "faustregel").
     #  Leer heißt: predicd-Tipps unverändert eintragen.
     strategies: tuple[str, ...] = ()
+    #  Bereits abgegebene Tipps ersetzen (wie --overwrite). `--overwrite` /
+    #  `--no-overwrite` auf der Kommandozeile gehen vor.
+    overwrite: bool = False
 
 
 def with_strategies(
@@ -224,6 +227,7 @@ def load_group_config(path: str | Path | None = None) -> dict[str, GroupConfig]:
         name      = "bl-cl-1"
         ligen     = ["bundesliga", "champions-league"]
         strategie = ["favorit", "faustregel"]   # optional
+        ueberschreiben = true                    # optional, Standard false
     """
     file = config_path(path)
     if not file.exists():
@@ -279,7 +283,16 @@ def load_group_config(path: str | Path | None = None) -> dict[str, GroupConfig]:
         except ConfigError as exc:
             raise ConfigError(f"{file}, Gruppe {name!r}: {exc}") from exc
 
-        groups[name] = GroupConfig(name=name, leagues=leagues, strategies=strategies)
+        overwrite = entry.get("ueberschreiben", False)
+        if not isinstance(overwrite, bool):
+            raise ConfigError(
+                f"{file}: 'ueberschreiben' bei Gruppe {name!r} muss true oder "
+                f"false sein (ohne Anführungszeichen), nicht {overwrite!r}."
+            )
+
+        groups[name] = GroupConfig(
+            name=name, leagues=leagues, strategies=strategies, overwrite=overwrite
+        )
 
     return groups
 
