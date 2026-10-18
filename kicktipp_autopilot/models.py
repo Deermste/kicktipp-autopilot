@@ -51,6 +51,10 @@ class Fixture:
     # die Folgezeilen weiter. Dient als Unterscheidungsmerkmal, wenn dieselbe
     # Paarung in zwei Wettbewerben vorkommt.
     kickoff: str | None = None
+    # Wettquoten (Heim, Remis, Gast), wie Kicktipp sie neben dem Spiel zeigt.
+    # None, solange Kicktipp noch keine anbietet. Grundlage der Tippstrategien
+    # in `strategy.py`.
+    odds: tuple[float, float, float] | None = None
 
     def __str__(self) -> str:
         return f"{self.home_team} vs {self.away_team}"

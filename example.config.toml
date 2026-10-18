@@ -26,6 +26,10 @@ ligen = ["bundesliga", "champions-league"]
 [[gruppen]]
 name  = "bundesliga-tippspiel"
 ligen = ["bundesliga"]
+# Optional: Tippstrategien auf Basis der Kicktipp-Quoten (README → Tip strategies).
+#   favorit    = Buchmacher-Favorit statt abweichender predicd-Tendenz
+#   faustregel = 3:0 bei klarem Favoriten (≥ 65 %), sonst 2:1, Remis 1:1
+# strategie = ["favorit", "faustregel"]
 
 # Bekannte Liganamen anzeigen:  kicktipp --list-leagues
 # Statt eines Namens geht auch direkt eine numerische predicd-ID.

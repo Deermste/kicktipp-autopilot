@@ -20,7 +20,9 @@ from rich.table import Table
 from .config import LEAGUES, Credentials, GroupConfig, LeagueRef
 from .errors import AutopilotError, MappingError, NotDrawnError, SubmissionError
 from .matching.matcher import MatchReport, TeamMatcher, load_aliases
-from .models import Prediction
+from .models import Fixture, Prediction
+from .strategy import Tip
+from .strategy import apply as apply_strategies
 from .sources.predicd import PredicdSource
 from .targets.base import TippTarget
 from .targets.kicktipp import KicktippBrowser
@@ -72,15 +74,28 @@ def render_plan(
     existing: dict[str, str],
     title: str = "",
     pending_ids: set[str | None] | None = None,
+    tips: dict[str, Tip] | None = None,
+    strategies: tuple[str, ...] = (),
+    written: set[str] | None = None,
 ) -> None:
-    """Zeigt, was eingetragen würde — inklusive der Problemfälle."""
+    """Zeigt, was eingetragen würde — inklusive der Problemfälle.
+
+    Mit Strategie zeigt eine zusätzliche Spalte den ursprünglichen
+    predicd-Tipp, und der Status nennt den Grund jeder Abweichung — aber nur
+    bei Spielen aus `written`. Ein bereits getipptes Spiel bleibt ja, wie
+    er ist; ein Grund daneben sähe aus, als würde er geändert.
+    """
     heading = f"Tippabgabe · {group}"
     if title:
         heading += f" · {title}"
+    if strategies:
+        heading += f" · Strategie: {', '.join(strategies)}"
 
     table = Table(title=heading, header_style="bold")
     table.add_column("Heim")
     table.add_column("Gast")
+    if strategies:
+        table.add_column("predicd", justify="center", style="dim")
     table.add_column("Tipp", justify="center", style="bold")
     table.add_column("Liga", style="dim")
     table.add_column("Status")
@@ -89,13 +104,19 @@ def render_plan(
         status = existing.get(str(match.fixture), "[green]wird eingetragen[/green]")
         if match.method == "fuzzy":
             status += f" [yellow](unscharf {match.confidence:.0%})[/yellow]"
-        table.add_row(
-            match.fixture.home_team,
-            match.fixture.away_team,
-            f"{match.prediction.home_score}:{match.prediction.away_score}",
-            match.prediction.league or "—",
-            status,
-        )
+        vorhersage = f"{match.prediction.home_score}:{match.prediction.away_score}"
+        tip = (tips or {}).get(match.fixture.tip_id or "")
+        tipp = f"{tip.home_score}:{tip.away_score}" if tip else vorhersage
+        schreibt = written is None or match.fixture.tip_id in written
+        if tip and tip.reason and schreibt:
+            unveraendert = tip.score == (match.prediction.home_score, match.prediction.away_score)
+            farbe = "dim" if unveraendert else "magenta"
+            status += f" [{farbe}]({tip.reason})[/{farbe}]"
+        zeile = [match.fixture.home_team, match.fixture.away_team]
+        if strategies:
+            zeile.append(vorhersage)
+        zeile += [tipp, match.prediction.league or "—", status]
+        table.add_row(*zeile)
 
     offen = pending_ids or set()
     for fixture in report.unmatched_fixtures:
@@ -104,12 +125,15 @@ def render_plan(
             if fixture.tip_id in offen
             else "[red]keine Vorhersage[/red]"
         )
-        table.add_row(fixture.home_team, fixture.away_team, "—", "—", status)
+        leer = ["—"] if strategies else []
+        table.add_row(fixture.home_team, fixture.away_team, *leer, "—", "—", status)
 
     for fixture, candidates in report.ambiguous:
+        leer = ["—"] if strategies else []
         table.add_row(
             fixture.home_team,
             fixture.away_team,
+            *leer,
             "—",
             ", ".join(sorted({p.league or "?" for p in candidates})),
             "[red]mehrdeutig — nicht geraten[/red]",
@@ -284,6 +308,10 @@ def run_groups(
 
     fremde_sitzung = target is not None
     outcomes: list[GroupOutcome] = []
+    # Quoten aller Seiten dieses Laufs. Kicktipp zeigt sie nicht in jeder
+    # Gruppe gleichzeitig an — eine gemischte Gruppe kann die Quoten eines
+    # Spiels noch leer lassen, die eine reine CL-Gruppe schon hat.
+    quoten: dict[tuple[str, str, str | None], tuple[float, float, float]] = {}
 
     def durchlauf(kicktipp: TippTarget) -> None:
         if not fremde_sitzung:
@@ -312,6 +340,7 @@ def run_groups(
                     overwrite=overwrite,
                     allow_partial=allow_partial,
                     require_fixtures=require_fixtures,
+                    odds_seen=quoten,
                 )
             )
 
@@ -348,6 +377,7 @@ def _mit_wiederholung(
     overwrite: bool,
     allow_partial: bool,
     require_fixtures: bool,
+    odds_seen: dict[tuple[str, str, str | None], tuple[float, float, float]] | None = None,
 ) -> GroupOutcome:
     """Eine Gruppe abarbeiten; Netzfehler wiederholen, Denkfehler nicht.
 
@@ -371,6 +401,8 @@ def _mit_wiederholung(
                 overwrite=overwrite,
                 allow_partial=allow_partial,
                 require_fixtures=require_fixtures,
+                strategies=run.strategies,
+                odds_seen=odds_seen,
             )
         except SubmissionError as error:
             if attempt >= MAX_ATTEMPTS:
@@ -412,11 +444,18 @@ def run_one_group(
     overwrite: bool = False,
     allow_partial: bool = False,
     require_fixtures: bool = True,
+    strategies: tuple[str, ...] = (),
+    odds_seen: dict[tuple[str, str, str | None], tuple[float, float, float]] | None = None,
 ) -> GroupOutcome:
     """Eine Gruppe zuordnen, anzeigen und — auf Wunsch — absenden.
 
     `target` ist bereits geöffnet und angemeldet; die Sitzung gehört dem
     Aufrufer, damit mehrere Gruppen sie teilen können.
+
+    `strategies` bestimmt, was aus den Vorhersagen wird (siehe
+    `strategy.py`); leer heißt unverändert. `odds_seen` sammelt die Quoten
+    über alle Gruppen eines Laufs, damit eine Gruppe ohne Quoten die einer
+    früheren mitbenutzen kann.
     """
     console.print(
         f"[dim]{len(predictions)} Vorhersagen aus "
@@ -469,6 +508,8 @@ def run_one_group(
         f"{len(page.fixtures)} Spielen)[/dim]"
     )
 
+    tips = _tips(report, page.fixtures, strategies, odds_seen)
+
     # Was tatsächlich geschrieben würde — bereits getippte Spiele bleiben
     # unangetastet, sofern nicht --overwrite gesetzt ist.
     changes: dict[str, tuple[int, int]] = {}
@@ -485,15 +526,14 @@ def run_one_group(
                 f"[yellow]überschreibt {values[0]}:{values[1]}[/yellow]"
             )
         assert match.fixture.tip_id is not None
-        changes[match.fixture.tip_id] = (
-            match.prediction.home_score,
-            match.prediction.away_score,
-        )
+        changes[match.fixture.tip_id] = tips[match.fixture.tip_id].score
 
     offene_ids = {f.tip_id for f in pending}
     luecken = [f for f in report.unmatched_fixtures if f.tip_id not in offene_ids]
 
-    render_plan(report, group, existing, page.title, offene_ids)
+    render_plan(
+        report, group, existing, page.title, offene_ids, tips, strategies, set(changes)
+    )
 
     ergebnis = GroupOutcome(
         group,
@@ -505,6 +545,15 @@ def run_one_group(
 
     if not submit:
         hinweis = f", {len(pending)} noch nicht ausgelost" if pending else ""
+        if strategies:
+            angepasst = sum(
+                1
+                for match in report.matched
+                if match.fixture.tip_id in changes
+                and changes[match.fixture.tip_id]
+                != (match.prediction.home_score, match.prediction.away_score)
+            )
+            hinweis += f", {angepasst} per Strategie angepasst"
         console.print(
             f"\n[green]Dry-Run ({target.name}):[/green] {len(report.matched)} zugeordnet, "
             f"{len(changes)} einzutragen, "
@@ -552,7 +601,7 @@ def run_one_group(
         for match in report.matched
         if match.fixture.tip_id in changes
         and after.tip_of(match.fixture)
-        != (str(match.prediction.home_score), str(match.prediction.away_score))
+        != tuple(str(goals) for goals in changes[match.fixture.tip_id])
     ]
     if abweichungen:
         raise SubmissionError(
@@ -568,3 +617,31 @@ def run_one_group(
     ergebnis.status = EINGETRAGEN
     ergebnis.written = len(changes)
     return ergebnis
+
+
+def _odds_key(fixture: Fixture) -> tuple[str, str, str | None]:
+    return fixture.home_team, fixture.away_team, fixture.kickoff
+
+
+def _tips(
+    report: MatchReport,
+    fixtures: list[Fixture],
+    strategies: tuple[str, ...],
+    odds_seen: dict[tuple[str, str, str | None], tuple[float, float, float]] | None,
+) -> dict[str, Tip]:
+    """Der einzutragende Tipp je Spiel-ID, nach den Strategien der Gruppe.
+
+    Fehlen einer Zeile die Quoten, springt eine andere Gruppe desselben Laufs
+    ein, sofern sie dasselbe Spiel (Paarung und Anstoß) mit Quoten zeigte.
+    """
+    bekannt = odds_seen if odds_seen is not None else {}
+    for fixture in fixtures:
+        if fixture.odds is not None:
+            bekannt[_odds_key(fixture)] = fixture.odds
+
+    tips: dict[str, Tip] = {}
+    for match in report.matched:
+        assert match.fixture.tip_id is not None
+        odds = match.fixture.odds or bekannt.get(_odds_key(match.fixture))
+        tips[match.fixture.tip_id] = apply_strategies(match.prediction, odds, strategies)
+    return tips

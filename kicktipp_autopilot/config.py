@@ -11,12 +11,13 @@ from __future__ import annotations
 import logging
 import os
 import tomllib
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 
 from dotenv import load_dotenv
 
 from .errors import ConfigError
+from .strategy import parse_strategies
 
 log = logging.getLogger(__name__)
 
@@ -170,6 +171,22 @@ class GroupConfig:
 
     name: str
     leagues: list[LeagueRef] = field(default_factory=list)
+    #  Tippstrategien aus `strategy.py`, z. B. ("favorit", "faustregel").
+    #  Leer heißt: predicd-Tipps unverändert eintragen.
+    strategies: tuple[str, ...] = ()
+
+
+def with_strategies(
+    runs: list[GroupConfig], cli_strategies: list[str] | None
+) -> list[GroupConfig]:
+    """`--strategie` gilt für alle Gruppen des Laufs und schlägt die config.toml.
+
+    Ohne Angabe bleibt, was je Gruppe eingetragen ist.
+    """
+    if cli_strategies is None:
+        return runs
+    chosen = parse_strategies(cli_strategies)
+    return [replace(run, strategies=chosen) for run in runs]
 
 
 # Verzeichnis, in dem das Paket liegt — dort steht auch die config.toml.
@@ -204,8 +221,9 @@ def load_group_config(path: str | Path | None = None) -> dict[str, GroupConfig]:
     Format::
 
         [[gruppen]]
-        name  = "bl-cl-1"
-        ligen = ["bundesliga", "champions-league"]
+        name      = "bl-cl-1"
+        ligen     = ["bundesliga", "champions-league"]
+        strategie = ["favorit", "faustregel"]   # optional
     """
     file = config_path(path)
     if not file.exists():
@@ -248,7 +266,20 @@ def load_group_config(path: str | Path | None = None) -> dict[str, GroupConfig]:
         except ConfigError as exc:
             raise ConfigError(f"{file}, Gruppe {name!r}: {exc}") from exc
 
-        groups[name] = GroupConfig(name=name, leagues=leagues)
+        raw_strategies = entry.get("strategie", [])
+        if isinstance(raw_strategies, str):
+            raw_strategies = [raw_strategies]
+        if not isinstance(raw_strategies, list):
+            raise ConfigError(
+                f"{file}: 'strategie' bei Gruppe {name!r} muss eine Liste sein, "
+                'z. B. strategie = ["favorit", "faustregel"].'
+            )
+        try:
+            strategies = parse_strategies([str(item) for item in raw_strategies])
+        except ConfigError as exc:
+            raise ConfigError(f"{file}, Gruppe {name!r}: {exc}") from exc
+
+        groups[name] = GroupConfig(name=name, leagues=leagues, strategies=strategies)
 
     return groups
 

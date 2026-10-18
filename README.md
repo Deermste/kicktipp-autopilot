@@ -24,8 +24,9 @@ https://github.com/user-attachments/assets/4c21c799-8883-435b-b7d7-60eed546c59d
 - **All your groups in one go** — `--all-groups` works through every group in `config.toml` on a single login, with a summary at the end
 - **Interactive menu** — `-i` lets you pick groups with the arrow keys, shows a preview, and asks before writing anything
 - **Stops instead of half-tipping** — If any game on the page has no clear prediction, nothing is submitted at all
+- **Optional tip strategies** — Uses the bookmaker odds Kicktipp shows next to each game to pick better scores (`faustregel`) and to side with the favourite (`favorit`); off unless you switch it on
 - **Knows when it is too early** — Rounds that Kicktipp has not drawn yet are named as such, not blamed on your config
-- **Offline tests** — 198 tests run against saved HTML, catching layout changes before they cost you points
+- **Offline tests** — 271 tests run against saved HTML, catching layout changes before they cost you points
 
 ---
 
@@ -201,6 +202,7 @@ python -m kicktipp_autopilot --no-kicktipp
 |---|---|
 | `--submit` | Actually enter and send the tips (otherwise: dry run) |
 | `--overwrite` | Also replace tips you already submitted (default: leave them alone) |
+| `--strategie NAME` | Tip strategy: `favorit`, `faustregel`, both (`favorit,faustregel`) or `keine`. Overrides `strategie` in `config.toml` for every group of the run |
 | `--group NAME` | Kicktipp group, overrides `.env` |
 | `--all-groups` | Work through every group in `config.toml` on one login |
 | `-i`, `--interactive` | Pick groups from a menu, preview, confirm before writing |
@@ -212,6 +214,49 @@ python -m kicktipp_autopilot --no-kicktipp
 | `--browser` | Use Selenium instead of HTTP (fallback, ~20× slower) |
 | `--show-browser` | Show the browser window (implies `--browser`) |
 | `-v` | Verbose output |
+
+### Tip strategies
+
+predicd delivers the *most likely* score. That is not the same as the tip that
+earns the most Kicktipp points. Two optional strategies sit on top of the
+prediction; both use the 1/X/2 odds Kicktipp shows next to every game:
+
+| Strategy | What it does |
+|---|---|
+| `faustregel` | Keeps predicd's tendency, replaces the score: a clear favourite (win probability ≥ 65 %) wins **3:0**, every other win is **2:1**, a draw is **1:1**. Above all, 2:0 disappears |
+| `favorit` | Where predicd's tendency disagrees with the bookmakers' favourite, the favourite is tipped instead (a draw included) |
+
+Both rules come from a backtest over 396 games (Bundesliga 25/26 in full, BL
+and CL 26/27 up to matchday 6 and 2). 2:0 scored worse than 2:1 or 1:0 in
+almost every favourite class of both seasons. The score rule was worth about
+**+1 point per 10 games** in both scoring types: fixed points (2/3/5) and
+odds-based points. The favourite rule touches roughly one game in eight. It
+lifts the hit rate slightly, but its effect on points was not conclusive so
+far. With only that much data, treat the numbers as a direction, not a promise.
+
+Switch them on per group in `config.toml`, or for a single run on the command
+line:
+
+```toml
+[[gruppen]]
+name      = "bundesliga-tippspiel"
+ligen     = ["bundesliga"]
+strategie = ["favorit", "faustregel"]
+```
+
+```bash
+python -m kicktipp_autopilot --all-groups                      # as in config.toml
+python -m kicktipp_autopilot --group my-league --strategie faustregel
+python -m kicktipp_autopilot --all-groups --strategie keine    # plain predicd
+```
+
+The preview shows predicd's original tip in an extra column and names the
+reason for every change. A game without odds keeps predicd's tip, so nothing is
+guessed. Kicktipp does not show odds in every group at the same time: a mixed
+BL+CL group can still have empty CL odds while a pure CL group already has
+them. During `--all-groups` a group without odds reuses those of an earlier
+group in the same run (same pairing, same kick-off). So put mixed groups last
+in `config.toml`.
 
 ### `--matchday` is the group's index, not the number on screen
 
@@ -378,6 +423,7 @@ Kicktipp-Autopilot/
 │   ├── interactive.py    # The menu behind -i
 │   ├── config.py         # .env + config.toml + league registry
 │   ├── models.py         # Prediction, Fixture, MatchResult
+│   ├── strategy.py       # Optional tip strategies (odds -> adjusted score)
 │   ├── errors.py         # Typed errors
 │   ├── selectors.py      # ALL CSS selectors, with verification dates
 │   ├── sources/
@@ -391,10 +437,11 @@ Kicktipp-Autopilot/
 │       ├── kicktipp_parse.py # HTML -> objects (shared, offline-testable)
 │       ├── kicktipp_http.py  # Default transport: plain HTTP
 │       └── kicktipp.py       # Fallback transport: Selenium
-├── tests/                # 198 tests, run fully offline
+├── tests/                # 271 tests, run fully offline
 │   ├── test_mehrere_ligen.py  # Groups with several competitions
 │   ├── test_alle_gruppen.py   # --all-groups: loop, isolation, summary
 │   ├── test_interaktiv.py     # The menu, with questionary stubbed out
+│   ├── test_strategy.py       # Tip strategies, from odds to the verified submit
 │   └── fixtures/         # Saved HTML pages (anonymised)
 ├── kicktipp              # Launcher script (symlinked into ~/.local/bin)
 ├── BL-Tipp.py            # Original single-file version (fallback)

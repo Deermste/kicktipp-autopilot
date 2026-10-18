@@ -14,7 +14,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from .config import Credentials, GroupConfig, all_configured_groups
+from .config import Credentials, GroupConfig, all_configured_groups, with_strategies
 from .errors import ConfigError
 from .runner import console, make_target, run_groups
 from .sources.predicd import PredicdSource
@@ -90,7 +90,9 @@ def run_interactive(
 
     # Dieselbe Quelle wie --all-groups: Was in der config.toml steht, ist
     # ausdrücklich gewollt und hat seine Wettbewerbe hinterlegt.
-    gewaehlt = choose_groups(all_configured_groups())
+    gewaehlt = choose_groups(
+        with_strategies(all_configured_groups(), getattr(args, "strategie", None))
+    )
     if not gewaehlt:
         console.print("[dim]Keine Gruppe ausgewählt — nichts zu tun.[/dim]")
         return 0

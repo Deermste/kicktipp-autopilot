@@ -24,6 +24,7 @@ from .config import (
     leagues_for,
     load_credentials,
     load_group_config,
+    with_strategies,
 )
 from .errors import AutopilotError, ConfigError
 from .runner import console, make_target, run_groups, run_predictions_only
@@ -47,11 +48,18 @@ def _setup_logging(verbose: bool) -> None:
 
 
 def single_group(credentials: Credentials, cli_leagues: list[str] | None) -> list[GroupConfig]:
-    """Die eine Gruppe aus `--group`/`.env` im selben Format wie `--all-groups`."""
+    """Die eine Gruppe aus `--group`/`.env` im selben Format wie `--all-groups`.
+
+    Strategien kommen wie die Ligen aus dem config.toml-Eintrag der Gruppe,
+    sofern es einen gibt; `--strategie` greift erst danach.
+    """
+    groups = load_group_config()
+    entry = groups.get(credentials.group)
     return [
         GroupConfig(
             name=credentials.group,
-            leagues=leagues_for(credentials.group, cli_leagues),
+            leagues=leagues_for(credentials.group, cli_leagues, groups=groups),
+            strategies=entry.strategies if entry else (),
         )
     ]
 
@@ -179,6 +187,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="Tipps tatsächlich eintragen und absenden.",
     )
     parser.add_argument(
+        "--strategie",
+        action="append",
+        default=None,
+        metavar="NAME",
+        help=(
+            "Tippstrategie: favorit (Buchmacher-Favorit statt abweichender "
+            "predicd-Tendenz), faustregel (Ergebnis 3:0 bei klarem Favoriten "
+            "ab 65 %%, sonst 2:1, Remis 1:1) oder keine. Kommaliste möglich, "
+            "z. B. --strategie favorit,faustregel. Gilt für alle Gruppen des "
+            "Laufs und ersetzt den Eintrag 'strategie' aus config.toml."
+        ),
+    )
+    parser.add_argument(
         "--overwrite", action="store_true",
         help="Auch bereits abgegebene Tipps überschreiben (Standard: unangetastet lassen).",
     )
@@ -280,10 +301,11 @@ def main(argv: list[str] | None = None) -> int:
 
             return run_interactive(credentials, args, use_browser, headless)
 
-        runs = (
+        runs = with_strategies(
             all_configured_groups()
             if args.all_groups
-            else single_group(credentials, args.league)
+            else single_group(credentials, args.league),
+            args.strategie,
         )
 
         if args.list_matchdays:

@@ -84,6 +84,12 @@ class Kicktipp:
     # trägt einen Wert, die Folgezeilen sind leer.
     KICKOFF_CELL = "td.kicktipp-time"
 
+    # Wettquoten 1/X/2 einer Spielzeile, Dezimalkomma ("1,32"). Die Zelle
+    # `td.quoten` ist immer da, bleibt aber leer, solange Kicktipp noch keine
+    # Quoten hat (verifiziert am 18.10.2026: CL-Spiele in einer gemischten
+    # Gruppe zwei Tage vor Anstoß).
+    ODDS_TEXT = "td.quoten .quote-text"
+
     COOKIE_BUTTON = (
         ".message-component.message-button.no-children.focusable"
         ".action_button.sp_choice_type_11"

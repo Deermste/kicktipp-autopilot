@@ -226,10 +226,29 @@ def parse_fixtures(html: str | BeautifulSoup) -> list[Fixture]:
                 away_team=teams[1],
                 tip_id=tip_id,
                 kickoff=kickoffs.get(id(row)),
+                odds=_odds_of(row),
             )
         )
 
     return fixtures
+
+
+def _odds_of(row: Tag) -> tuple[float, float, float] | None:
+    """Die Quoten 1/X/2 einer Spielzeile, sonst None.
+
+    Nur ein vollständiges Tripel zählt: Mit zwei von drei Quoten ließe sich
+    keine Wahrscheinlichkeit ausrechnen, und eine halbe Angabe soll nicht
+    stillschweigend eine Strategie auslösen.
+    """
+    values: list[float] = []
+    for cell in row.select(S.ODDS_TEXT):
+        try:
+            values.append(float(cell.get_text(strip=True).replace(",", ".")))
+        except ValueError:
+            return None
+    if len(values) != 3 or any(value <= 1.0 for value in values):
+        return None
+    return values[0], values[1], values[2]
 
 
 def _kickoff_by_row(soup: BeautifulSoup) -> dict[int, str]:
